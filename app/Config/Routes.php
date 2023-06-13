@@ -37,6 +37,7 @@ $routes->get('/admin', 'AdminController::index');
 $routes->group('admin', function ($routes) {
     $routes->get('article/create', 'ArticleController::create');
     $routes->post('article/save', 'ArticleController::save');
+    $routes->get('article/(:any)', 'ArticleController::detail/$1');
 });
 
 

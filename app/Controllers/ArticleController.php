@@ -36,4 +36,19 @@ class ArticleController extends BaseController
         ]);
         return redirect()->to('/admin');
     }
+
+    public function detail($slug)
+    {
+        $data = [
+            'title' => 'Detail',
+            'article' => $this->articleModel->getArticle($slug)
+        ];
+
+        // jika komik tidak ada
+        if (empty($data['article'])) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('the title of the ' . $slug . ' article does not exist');
+        }
+
+        return view('/admin/article/detail', $data);
+    }
 }

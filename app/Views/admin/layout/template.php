@@ -29,6 +29,7 @@
 
 <body class="bg-body">
     <?= $this->include('admin/layout/navbar') ?>
+
     <?= $this->renderSection('content') ?>
     <!-- flowbite js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
