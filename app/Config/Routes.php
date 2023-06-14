@@ -36,7 +36,10 @@ $routes->get('/admin', 'AdminController::index');
 // admin-article
 $routes->group('admin', function ($routes) {
     $routes->get('article/create', 'ArticleController::create');
+    $routes->get('article/edit/(:segment)', 'ArticleController::edit/$1');
+    $routes->post('article/update/(:any)', 'ArticleController::update/$1');
     $routes->post('article/save', 'ArticleController::save');
+    $routes->delete('article/(:num)', 'ArticleController::destroy/$1');
     $routes->get('article/(:any)', 'ArticleController::detail/$1');
 });
 
