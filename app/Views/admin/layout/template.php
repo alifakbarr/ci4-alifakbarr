@@ -22,6 +22,8 @@
             }
         }
     </script>
+    <!-- ckeditor -->
+    <script src="<?= base_url('build/ckeditor.js') ?>"></script>
     <!-- flowbite css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <title><?= $title ?></title>
@@ -33,6 +35,17 @@
     <?= $this->renderSection('content') ?>
     <!-- flowbite js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <!-- ck editor -->
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .then(editor => {
+                editor.resize('100%', '900px', true);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 </body>
 
 </html>
