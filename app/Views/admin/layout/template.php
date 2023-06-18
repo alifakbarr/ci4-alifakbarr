@@ -29,7 +29,7 @@
     <title><?= $title ?></title>
 </head>
 
-<body class="bg-body">
+<body class="bg-black">
     <?= $this->include('admin/layout/navbar') ?>
 
     <?= $this->renderSection('content') ?>
