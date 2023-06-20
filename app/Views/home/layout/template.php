@@ -11,12 +11,7 @@
             theme: {
                 extend: {
                     colors: {
-                        navbar: '#020617',
-                        subMenu: '#0f172a',
-                        subMenu2: '#1e293b',
-                        body: '#020617',
-                        title: '#f1f5f9',
-                        bgArticle: '#0f172a'
+                        bgCard: '#17191a'
                     }
                 }
             }

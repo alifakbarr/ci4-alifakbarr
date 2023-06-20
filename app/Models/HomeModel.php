@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Home extends Model
+class HomeModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'articles';
@@ -13,7 +13,7 @@ class Home extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['title', 'content'];
 
     // Dates
     protected $useTimestamps = false;
@@ -41,13 +41,11 @@ class Home extends Model
 
     public function search($keyword)
     {
-        if (!$keyword) {
-            return null;
-        }
+        // $builder = $this->table('articles');
+        // $builder->like('title', $keyword);
 
-        $this->table($this->table)
-            ->like('title', $keyword)
-            ->get()
-            ->getResult();
+        // return $builder;
+
+        return $this->table('articles')->like('title', $keyword);
     }
 }
