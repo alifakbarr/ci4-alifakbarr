@@ -68,5 +68,8 @@
             </tbody>
         </table>
     </div>
+    <div class="mt-5 flex justify-center">
+        <?= $pager->links('articles', 'home_pagination') ?>
+    </div>
 </div>
 <?= $this->endSection() ?>

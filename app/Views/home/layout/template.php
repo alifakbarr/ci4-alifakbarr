@@ -48,7 +48,7 @@
                     <a href="/admin" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
                         <img src="/img/newspaper.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
                         <span class="flex-1 ml-3 whitespace-nowrap">Articles</span>
-                        <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-white bg-black rounded-full">1899</span>
+                        <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-white bg-black rounded-full"><?= $jumlahArtikel ?></span>
                     </a>
                 <li>
                     <a href="/admin" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
@@ -67,7 +67,7 @@
     <div class="p-4 sm:ml-64">
         <?= $this->renderSection('content') ?>
         <div class="p-4 border-2 bg-white border border-white rounded-lg mt-5">
-            <h1 class="text-left font-bold text-sm">&copy 2023 | Alif Akbar Irdhobilla</h1>
+            <h1 class="text-left font-semibold text-sm">&copy 2023 | Alif Akbar Irdhobilla</h1>
         </div>
     </div>
 
