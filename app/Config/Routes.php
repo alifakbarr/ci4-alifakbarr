@@ -44,8 +44,10 @@ $routes->group('admin', function ($routes) {
 });
 
 // home
-$routes->get('/', 'HomeController::index');
-$routes->post('/(:any)', 'HomeController::search/$1');
+$routes->group('', function ($routes) {
+    $routes->get('/', 'HomeController::index');
+    $routes->get('/articles', 'HomeController::articles');
+});
 
 
 

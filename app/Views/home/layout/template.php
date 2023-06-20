@@ -34,13 +34,13 @@
 
     <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto bg-neutral-900 shadow-2xl">
-            <a href="/admin" class="flex items-center pl-2.5 mb-5">
+            <a href="/" class="flex items-center pl-2.5 mb-5">
                 <img src="/img/notes2.png" class="h-6 mr-3 sm:h-7" alt="Flowbite Logo" />
                 <span class="self-center text-xl font-semibold whitespace-nowrap text-white italic">alifakbarr</span>
             </a>
             <ul class="space-y-2 font-medium">
                 <li>
-                    <a href="/admin" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
+                    <a href="/articles" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
                         <img src="/img/newspaper.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
                         <span class="flex-1 ml-3 whitespace-nowrap">Articles</span>
                         <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-white bg-black rounded-full"><?= $jumlahArtikel ?></span>
