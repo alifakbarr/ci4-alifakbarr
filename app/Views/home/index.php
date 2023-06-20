@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 <div class="w-full p-9 mb-6 text-center bg-white border-y border-y-4 rounded-lg shadow sm:p-9 bg-yellow-400">
     <div class="flex justify-center items-center">
-        <img src="/img/logo.png" class="h-12" alt="instagram" />
+        <img src="/img/notes.png" class="h-12 mr-1" alt="instagram" />
         <p class="mb-1 text-5xl font-bold text-black italic tracking-tighter">
             alifakbarr
         </p>
