@@ -5,7 +5,8 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\ArticleModel;
 
-class AdminController extends BaseController
+
+class HomeController extends BaseController
 {
     protected $articleModel;
 
@@ -22,6 +23,6 @@ class AdminController extends BaseController
             'article' => $this->articleModel->findAll(),
             'jumlahArtikel' => $jumlahArtikel,
         ];
-        return view('admin/index', $data);
+        return view('home/index', $data);
     }
 }
