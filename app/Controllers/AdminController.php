@@ -16,9 +16,11 @@ class AdminController extends BaseController
 
     public function index()
     {
+        $jumlahArtikel = $this->articleModel->countAll();
         $data = [
             'title' => 'Home',
-            'article' => $this->articleModel->findAll()
+            'article' => $this->articleModel->findAll(),
+            'jumlahArtikel' => $jumlahArtikel,
         ];
         return view('admin/index', $data);
     }
