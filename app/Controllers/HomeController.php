@@ -27,31 +27,23 @@ class HomeController extends BaseController
         $data = [
             'title' => 'Home',
             // 'article' => $this->articleModel->findAll(),
-            'article' => $this->articleModel->paginate(10, 'articles'),
+            'article' => $this->articleModel->orderBy('created_at DESC')->paginate(10, 'articles'),
             'pager' => $this->articleModel->pager,
             'jumlahArtikel' => $jumlahArtikel,
         ];
         return view('home/index', $data);
     }
 
-    public function search($keyword)
+    public function articles()
     {
         $jumlahArtikel = $this->articleModel->countAll();
 
-        $keyword = $this->request->getVar('keyword');
-        if ($keyword) {
-            $article  = $this->homeModel->search($keyword);
-        } else {
-            $article = $this->homeModel;
-        }
-
         $data = [
-            'title' => 'Home',
-            // 'article' => $this->articleModel->findAll(),
-            'article' => $article->paginate(5, 'articles'),
+            'title' => 'List Article',
+            'article' => $this->articleModel->orderBy('created_at DESC')->paginate(20, 'articles'),
             'pager' => $this->articleModel->pager,
             'jumlahArtikel' => $jumlahArtikel,
         ];
-        return view('home/index', $data);
+        return view('home/articles', $data);
     }
 }

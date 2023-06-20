@@ -2,24 +2,13 @@
 <?= $this->section('content') ?>
 <div class="w-full  mb-6 text-center bg-white border-y border-y-4 rounded-lg shadow py-9 bg-yellow-400">
     <div class="flex justify-center items-center">
-        <img src="/img/notes.png" class="h-12 mr-1" alt="instagram" />
-        <p class="mb-1 text-5xl font-bold text-black italic tracking-tighter">
-            alifakbarr
+        <img src="/img/notes.png" class="h-9 sm:h-12 mr-1" alt="instagram" />
+        <p class="mb-1 text-3xl sm:text-5xl font-bold text-black italic tracking-tighter">
+            List Article
         </p>
     </div>
     <div class="flex justify-center items-center mt-7 bg-white py-1">
-        <a href="https://www.instagram.com/alifakbar_8/" class="flex items-center mx-4" target="_blank">
-            <img src="/img/instagram.png" class="h-4 mr-1 sm:h-4" alt="instagram" />
-            <p class="mb-1 italic text-base text-black sm:text-base">alifakbar_8</p>
-        </a>
-        <a href="https://github.com/alifakbarr" class="flex items-center mx-4" target="_blank">
-            <img src="/img/github.png" class="h-4 mr-1 sm:h-4" alt="github" />
-            <p class="mb-1 italic text-base text-black sm:text-base">alifakbarr</p>
-        </a>
-        <a href="https://www.linkedin.com/in/alifakbari/" class="flex items-center mx-4" target="_blank">
-            <img src="/img/linkedin.png" class="h-4 mr-1 sm:h-4" alt="linkedin" />
-            <p class="mb-1 italic text-base text-black sm:text-base">Alif Akbar I</p>
-        </a>
+        <h1 class="text-lg sm:text-2xl font-bold text-black tracking-tighter">Notes gabut doang.</h1>
     </div>
 </div>
 
@@ -41,11 +30,7 @@
     <div class="flex justify-between items-center mb-5 pb-3 border-b border-zinc-700">
         <div class="flex items-center ">
             <img src="/img/article.png" class="h-8 mr-1 sm:h-8" alt="instagram" />
-            <p class="italic text-base text-white">Latest Articles</p>
-        </div>
-        <div class="">
-            <a href="/articles" class="text-sm text-white">See all articles</a>
-            <div class="border-b border-white"></div>
+            <p class="italic text-base text-white">List Articles</p>
         </div>
     </div>
     <div class="">
@@ -62,6 +47,9 @@
                 </a>
             </div>
         <?php endforeach ?>
+        <div class="mt-5 flex justify-center">
+            <?= $pager->links('articles', 'home_pagination') ?>
+        </div>
     </div>
 </div>
 <?= $this->endSection() ?>
