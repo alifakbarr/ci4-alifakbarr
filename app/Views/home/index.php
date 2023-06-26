@@ -50,18 +50,21 @@
     </div>
     <div class="">
         <?php $no = 1 ?>
-        <?php foreach ($article as $a) : ?>
-            <div class="bg-neutral-900 p-3 px-4 mb-3 rounded ">
-                <a href="/admin/article/<?= $a['slug'] ?>" class="flex content-center items-center hover:underline hover:decoration-white">
-                    <h1 class="text-3xl sm:text-3xl text-white mr-3"><?= $no++ ?></h1>
-                    <img src="/img/file.png" class="h-14 mr-2 sm:h-14" alt="file" />
-                    <div class="">
-                        <h1 class="text-white text-base tracking-tighter leading-tight"><?= $a['title'] ?></h1>
-                        <p class="text-zinc-500 text-sm"><?= date("d M Y", strtotime($a['created_at'])) ?></p>
-                    </div>
-                </a>
-            </div>
-        <?php endforeach ?>
+        <div class="bg-neutral-900 p-3 px-4 mb-3 rounded grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <?php foreach ($article as $a) : ?>
+                <div class="">
+                    <a href="/admin/article/<?= $a['slug'] ?>" class="card flex hover:scale-110 transition-transform duration-300">
+                        <h1 class="text-3xl font-black sm:text-5xl text-zinc-700 mr-3 hover:text-yellow-500 transition-colors duration-300"><?= sprintf('%02d', $no++) ?></h1>
+                        <div class="flex content-center items-start sm:items-center hover:underline hover:decoration-white"></div>
+                        <img src="/img/file.png" class="h-14 mr-2 sm:h-28" alt="file" />
+                        <div class="">
+                            <h2 class="text-white text-base tracking-tighter leading-tight"><?= $a['title'] ?></h2>
+                            <p class="text-zinc-500 text-sm"><?= date("d M Y", strtotime($a['created_at'])) ?></p>
+                        </div>
+                    </a>
+                </div>
+            <?php endforeach ?>
+        </div>
     </div>
 </div>
 <?= $this->endSection() ?>
