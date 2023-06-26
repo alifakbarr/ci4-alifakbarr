@@ -36,9 +36,9 @@
     <div class="">
         <?php $no = 1 ?>
         <?php foreach ($article as $a) : ?>
-            <div class="bg-neutral-900 p-3 px-4 mb-3 rounded ">
+            <div class="bg-neutral-900 p-3 px-4 mb-3 rounded flex items-start sm:items-center">
+                <h1 class="text-3xl font-bold sm:text-3xl text-white mr-3"><?= $no++ ?></h1>
                 <a href="/admin/article/<?= $a['slug'] ?>" class="flex content-center items-center hover:underline hover:decoration-white">
-                    <h1 class="text-3xl sm:text-3xl text-white mr-3"><?= $no++ ?></h1>
                     <img src="/img/file.png" class="h-14 mr-2 sm:h-14" alt="file" />
                     <div class="">
                         <h1 class="text-white text-base tracking-tighter leading-tight"><?= $a['title'] ?></h1>
