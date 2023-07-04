@@ -68,8 +68,22 @@
                         </a>
                     </li>
                 <?php endif; ?>
-                <hr class="mx-2">
-                <?php if (logged_in() == false) : ?>
+                <?php if (logged_in() == true) : ?>
+                    <li>
+                        <a href="<?= base_url('logout') ?>" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
+                            <img src="/img/logout.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
+                            <span class="flex-1 ml-3 whitespace-nowrap">Sign Out</span>
+                        </a>
+                    <li>
+                        <hr class="mx-2">
+                    <?php endif; ?>
+                    <?php if (logged_in() == false) : ?>
+                        <!-- <li>
+                        <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="w-full text-left flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
+                            <img src="/img/user.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
+                            <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
+                        </button>
+                    <li> -->
                     <li>
                         <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="w-full text-left flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
                             <img src="/img/user.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
@@ -126,27 +140,26 @@
                         <img src="/img/hand.png" class="h-6 mr-1 sm:h-7 -mt-5" alt="">
                     </div>
                     <p class="-mt-2 hover:underline">Welcome to alifakbarr.</p>
-                    <form class="space-y-6 mt-5" action="#">
+                    <?= view('Myth\Auth\Views\_message_block') ?>
+
+                    <form class="space-y-6 mt-5" action="<?= url_to('login') ?>" method="post">
                         <div>
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Your email</label>
-                            <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="youremail@email.com" required>
+                            <input type="email" name="login" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 <?php if (session('errors.login')) : ?>border-red-900<?php endif ?>" placeholder="youremail@email.com" required>
+                            <div class="invalid-feedback">
+                                <?= session('errors.login') ?>
+                            </div>
                         </div>
                         <div>
                             <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Your password</label>
-                            <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5e" required>
-                        </div>
-                        <div class="flex justify-between">
-                            <div class="flex items-start">
-                                <div class="flex items-center h-5">
-                                    <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300" required>
-                                </div>
-                                <label for="remember" class="ml-2 text-sm font-medium text-gray-900">Remember me</label>
+                            <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5e <?php if (session('errors.password')) : ?>border-red-900<?php endif ?>" required>
+                            <div class="invalid-feedback">
+                                <?= session('errors.password') ?>
                             </div>
-                            <a href="#" class="text-sm text-black hover:underline">Lost Password?</a>
                         </div>
                         <button type="submit" class="w-full text-white bg-black hover:bg-black focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Login to your account</button>
                         <div class="text-sm font-medium text-zinc-500">
-                            Not registered? <a href="/signUp" class="text-black hover:underline">Create account</a>
+                            Not registered? <a href="<?= url_to('register') ?>" class="text-black hover:underline">Create account</a>
                         </div>
                     </form>
                 </div>
