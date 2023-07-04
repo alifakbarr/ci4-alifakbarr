@@ -25,11 +25,9 @@ class UserManagementController extends BaseController
 
 
 
-        $jumlahArtikel = $this->articleModel->countAll();
         $data = [
             'title' => 'Admin | Management User',
             'article' => $this->articleModel->findAll(),
-            'jumlahArtikel' => $jumlahArtikel,
             'users' => $query->getResult()
         ];
         return view('admin/profile/index', $data);

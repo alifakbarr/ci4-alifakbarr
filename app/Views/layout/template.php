@@ -78,12 +78,6 @@
                         <hr class="mx-2">
                     <?php endif; ?>
                     <?php if (logged_in() == false) : ?>
-                        <!-- <li>
-                        <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="w-full text-left flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                            <img src="/img/user.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
-                            <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
-                        </button>
-                    <li> -->
                     <li>
                         <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="w-full text-left flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
                             <img src="/img/user.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
@@ -92,10 +86,16 @@
                     <li>
                     <?php endif ?>
                     <li>
+                        <a href="/" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
+                            <img src="/img/home.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
+                            <span class="flex-1 ml-3 whitespace-nowrap">Home</span>
+                        </a>
+                    <li>
+                    <li>
                         <a href="/articles" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
                             <img src="/img/newspaper.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
                             <span class="flex-1 ml-3 whitespace-nowrap">Articles</span>
-                            <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-white bg-black rounded-full"><?= $jumlahArtikel ?></span>
+                            <!-- <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-white bg-black rounded-full"></span> -->
                         </a>
                     <li>
                         <a href="/admin" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">

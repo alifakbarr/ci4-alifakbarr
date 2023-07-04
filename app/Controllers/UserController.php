@@ -19,17 +19,11 @@ class UserController extends BaseController
 
     public function profile()
     {
-        $jumlahArtikel = $this->articleModel->countAll();
-
-        // d($this->request->getVar('keyword'));
-        // search
 
         $data = [
             'title' => 'My Profile',
-            // 'article' => $this->articleModel->findAll(),
             'article' => $this->articleModel->orderBy('created_at DESC')->paginate(10, 'articles'),
             'pager' => $this->articleModel->pager,
-            'jumlahArtikel' => $jumlahArtikel,
         ];
         return view('user/profile/profile', $data);
     }
