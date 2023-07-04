@@ -1,4 +1,4 @@
-<?= $this->extend('/admin/layout/template') ?>
+<?= $this->extend('/layout/template') ?>
 <?= $this->section('content') ?>
 <div class="p-4 sm:ml-64">
     <div class="w-full p-4 mb-5 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 bg-white">

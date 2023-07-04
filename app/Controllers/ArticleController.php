@@ -16,7 +16,13 @@ class ArticleController extends BaseController
 
     public function index()
     {
-        //
+        $jumlahArtikel = $this->articleModel->countAll();
+        $data = [
+            'title' => 'Admin | Article Management',
+            'article' => $this->articleModel->findAll(),
+            'jumlahArtikel' => $jumlahArtikel,
+        ];
+        return view('admin/article/index', $data);
     }
 
     public function create()
