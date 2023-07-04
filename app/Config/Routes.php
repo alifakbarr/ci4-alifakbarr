@@ -31,23 +31,40 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 // admin-index
-$routes->get('/admin', 'AdminController::index');
+// auth
+// $routes->group('masuk', function ($routes) {
+//     $routes->get('/register', 'HomeController::register');
+// });
 
+
+
+$routes->group('', function ($routes) {
+    $routes->get('profile', 'UserController::profile', ['filter' => 'role:admin,user']);
+});
+
+// admin-index
+// $routes->get('/admin', 'AdminController::index', ['filter' => 'role:admin']);
 // admin-article
-$routes->group('admin', function ($routes) {
+$routes->group('admin', ['filter' => 'role:admin'], function ($routes) {
+    $routes->get('article/index', 'ArticleController::index');
     $routes->get('article/create', 'ArticleController::create');
     $routes->get('article/edit/(:segment)', 'ArticleController::edit/$1');
     $routes->post('article/update/(:any)', 'ArticleController::update/$1');
     $routes->post('article/save', 'ArticleController::save');
     $routes->delete('article/(:num)', 'ArticleController::destroy/$1');
     $routes->get('article/(:any)', 'ArticleController::detail/$1');
+    $routes->get('userManagement', 'UserManagementController::index');
+    $routes->get('userManagement/(:num)', 'UserManagementCOntroller::detail/$1');
 });
 
 // home
 $routes->group('', function ($routes) {
     $routes->get('/', 'HomeController::index');
     $routes->get('/articles', 'HomeController::articles');
+    $routes->get('/signUp', 'HomeController::signUp');
+    $routes->get('/signIn', 'HomeController::signIn');
 });
+
 
 
 

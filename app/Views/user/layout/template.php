@@ -46,28 +46,17 @@
             </a>
             <ul class="space-y-2 font-medium">
                 <li>
-                    <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="w-full text-left flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
+                    <a href="/" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
                         <img src="/img/user.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
-                        <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
-                    </button>
-                <li>
-                <li>
-                    <a href="/articles" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                        <img src="/img/newspaper.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
-                        <span class="flex-1 ml-3 whitespace-nowrap">Articles</span>
-                        <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-white bg-black rounded-full"><?= $jumlahArtikel ?></span>
-                    </a>
-                <li>
-                    <a href="/admin" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                        <img src="/img/archive.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
-                        <span class="flex-1 ml-3 whitespace-nowrap">Portofolio</span>
-                    </a>
-                <li>
-                    <a href="/admin" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                        <img src="/img/information.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
-                        <span class="flex-1 ml-3 whitespace-nowrap">About Me</span>
+                        <span class="flex-1 ml-3 whitespace-nowrap">My Profile</span>
                     </a>
                 </li>
+                <li>
+                    <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="w-full text-left flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
+                        <img src="/img/logout.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
+                        <span class="flex-1 ml-3 whitespace-nowrap">Log Out</span>
+                    </button>
+                <li>
             </ul>
         </div>
     </aside>
@@ -89,36 +78,15 @@
                     </svg>
                     <span class="sr-only">Close modal</span>
                 </button>
-                <div class="px-6 py-6 lg:px-8">
-                    <a href="/" class="flex items-center mb-5">
-                        <img src="/img/notes.png" class="h-6 mr-1 sm:h-7" alt="Flowbite Logo" />
-                        <span class="self-center text-2xl font-semibold whitespace-nowrap text-black italic">alifakbarr</span>
+                <div class="p-6 text-center">
+                    <svg aria-hidden="true" class="mx-auto mb-4 w-14 h-14 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <h3 class="mb-5 text-lg font-normal text-black">You want log out?</h3>
+                    <a href="<?= base_url('logout') ?>" data-modal-hide="popup-modal" type="button" class="text-white bg-black font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                        Yes, I'm sure
                     </a>
-                    <div class="flex items-center content-center mt-8">
-                        <p class="mb-4 text-lg font-bold text-black leading-tight ">Hey, hello</p>
-                        <img src="/img/hand.png" class="h-6 mr-1 sm:h-7 -mt-5" alt="">
-                    </div>
-                    <p class="-mt-2 hover:underline">Welcome to alifakbarr.</p>
-                    <form class="space-y-6 mt-5" action="#">
-                        <div>
-                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Your email</label>
-                            <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="gearfive@email.com" required>
-                        </div>
-                        <div>
-                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Your password</label>
-                            <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5e" required>
-                        </div>
-                        <div class="flex justify-between">
-                            <div class="flex items-start">
-                                <div class="flex items-center h-5">
-                                    <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300" required>
-                                </div>
-                                <label for="remember" class="ml-2 text-sm font-medium text-gray-900">Remember me</label>
-                            </div>
-                            <!-- <a href="#" class="text-sm text-blue-700 hover:underline">Lost Password?</a> -->
-                        </div>
-                        <button type="submit" class="w-full text-white bg-black hover:bg-black focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Login to your account</button>
-                    </form>
+                    <button data-modal-hide="popup-modal" type="button" class="text-black bg-white rounded-lg border-2 border-black text-sm font-medium px-5 py-2.5">No, cancel</button>
                 </div>
             </div>
         </div>
