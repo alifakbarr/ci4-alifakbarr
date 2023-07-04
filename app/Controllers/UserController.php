@@ -6,7 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\ArticleModel;
 use App\Models\HomeModel;
 
-class HomeController extends BaseController
+class UserController extends BaseController
 {
     protected $articleModel;
     protected $homeModel;
@@ -17,7 +17,7 @@ class HomeController extends BaseController
         $this->homeModel = new HomeModel();
     }
 
-    public function index()
+    public function profile()
     {
         $jumlahArtikel = $this->articleModel->countAll();
 
@@ -25,35 +25,12 @@ class HomeController extends BaseController
         // search
 
         $data = [
-            'title' => 'Home',
+            'title' => 'My Profile',
             // 'article' => $this->articleModel->findAll(),
             'article' => $this->articleModel->orderBy('created_at DESC')->paginate(10, 'articles'),
             'pager' => $this->articleModel->pager,
             'jumlahArtikel' => $jumlahArtikel,
         ];
-        return view('home/index', $data);
-    }
-
-    public function articles()
-    {
-        $jumlahArtikel = $this->articleModel->countAll();
-
-        $data = [
-            'title' => 'List Article',
-            'article' => $this->articleModel->orderBy('created_at DESC')->paginate(20, 'articles'),
-            'pager' => $this->articleModel->pager,
-            'jumlahArtikel' => $jumlahArtikel,
-        ];
-        return view('home/articles', $data);
-    }
-
-    public function signIn()
-    {
-        return view('auth/signIn');
-    }
-
-    public function signUp()
-    {
-        return view('auth/signUp');
+        return view('user/profile/profile', $data);
     }
 }

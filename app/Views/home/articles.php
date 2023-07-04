@@ -1,4 +1,4 @@
-<?= $this->extend('/home/layout/template') ?>
+<?= $this->extend('/layout/template') ?>
 <?= $this->section('content') ?>
 <div class="w-full  mb-6 text-center bg-white border-y border-y-4 rounded-lg shadow py-9 bg-yellow-400">
     <div class="flex justify-center items-center">
