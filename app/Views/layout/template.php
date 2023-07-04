@@ -62,36 +62,38 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/admin/userManagement" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
+                        <a href="/admin/article" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
                             <img src="/img/newspaper.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
                             <span class="flex-1 ml-3 whitespace-nowrap">Article Management</span>
                         </a>
                     </li>
                 <?php endif; ?>
                 <hr class="mx-2">
-                <li>
-                    <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="w-full text-left flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                        <img src="/img/user.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
-                        <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
-                    </button>
-                <li>
-                <li>
-                    <a href="/articles" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                        <img src="/img/newspaper.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
-                        <span class="flex-1 ml-3 whitespace-nowrap">Articles</span>
-                        <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-white bg-black rounded-full"><?= $jumlahArtikel ?></span>
-                    </a>
-                <li>
-                    <a href="/admin" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                        <img src="/img/archive.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
-                        <span class="flex-1 ml-3 whitespace-nowrap">Portofolio</span>
-                    </a>
-                <li>
-                    <a href="/admin" class="mb-5 flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                        <img src="/img/information.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
-                        <span class="flex-1 ml-3 whitespace-nowrap">About Me</span>
-                    </a>
-                </li>
+                <?php if (logged_in() == false) : ?>
+                    <li>
+                        <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="w-full text-left flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
+                            <img src="/img/user.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
+                            <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
+                        </button>
+                    <li>
+                    <?php endif ?>
+                    <li>
+                        <a href="/articles" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
+                            <img src="/img/newspaper.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
+                            <span class="flex-1 ml-3 whitespace-nowrap">Articles</span>
+                            <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-white bg-black rounded-full"><?= $jumlahArtikel ?></span>
+                        </a>
+                    <li>
+                        <a href="/admin" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
+                            <img src="/img/archive.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
+                            <span class="flex-1 ml-3 whitespace-nowrap">Portofolio</span>
+                        </a>
+                    <li>
+                        <a href="/admin" class="mb-5 flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
+                            <img src="/img/information.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
+                            <span class="flex-1 ml-3 whitespace-nowrap">About Me</span>
+                        </a>
+                    </li>
 
             </ul>
         </div>

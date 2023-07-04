@@ -46,7 +46,7 @@ $routes->group('', function ($routes) {
 // $routes->get('/admin', 'AdminController::index', ['filter' => 'role:admin']);
 // admin-article
 $routes->group('admin', ['filter' => 'role:admin'], function ($routes) {
-    $routes->get('article/index', 'ArticleController::index');
+    $routes->get('article/', 'ArticleController::index');
     $routes->get('article/create', 'ArticleController::create');
     $routes->get('article/edit/(:segment)', 'ArticleController::edit/$1');
     $routes->post('article/update/(:any)', 'ArticleController::update/$1');

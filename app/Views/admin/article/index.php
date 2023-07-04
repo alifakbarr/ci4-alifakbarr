@@ -1,12 +1,12 @@
 <?= $this->extend('/layout/template') ?>
 <?= $this->section('content') ?>
-<div class="w-full p-4 mb-6 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 bg-white">
+<div class="w-full p-4 mb-6 text-center border border-gray-200 rounded-lg shadow sm:p-8 bg-yellow-400">
     <h5 class="mb-2 text-3xl font-bold text-black ">Articles</h5>
     <p class="mb-5 italic text-base text-black sm:text-base ">Write to inspire, heal, and transform.</p>
 </div>
 
 <div class="p-4 border-2 border rounded-lg border-white">
-    <a href="/admin/article/create" class="text-black bg-white font-medium rounded-lg text-base px-4 py-1.5 text-center mr-2 mb-2">Create</a>
+    <a href="/admin/article/create" class="text-black bg-yellow-400 font-medium rounded-lg text-base px-4 py-1.5 text-center mr-2 mb-2">Create</a>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg my-6">
         <table class="w-full text-sm text-left text-white">
             <thead class="text-xs text-black uppercase bg-white">
