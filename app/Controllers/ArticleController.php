@@ -33,13 +33,38 @@ class ArticleController extends BaseController
 
     public function save()
     {
-        $this->articleModel->save([
-            'title' => $this->request->getVar('title'),
-            'content' => $this->request->getVar('content'),
-            'slug' => url_title($this->request->getvar('title'), '-', TRUE)
-        ]);
-        return redirect()->to('/admin/article');
+        $data = [
+            'title' => 'Create Article'
+        ];
+        helper(['form']);
+        $rules = [
+            'title' => 'required|min_length[10]|max_length[50]',
+            'content' => 'required',
+        ];
+
+        if ($this->validate($rules)) {
+            $data = [
+                'title' => $this->request->getVar('title'),
+                'content' => $this->request->getVar('content'),
+            ];
+
+            $this->articleModel->save($data);
+            return redirect()->to('/admin/article');
+        } else {
+            $data['validation'] = $this->validator;
+            echo view('/admin/article/create', $data);
+        }
     }
+
+    // public function save()
+    // {
+    //     $this->articleModel->save([
+    //         'title' => $this->request->getVar('title'),
+    //         'content' => $this->request->getVar('content'),
+    //         'slug' => url_title($this->request->getvar('title'), '-', TRUE)
+    //     ]);
+    //     return redirect()->to('/admin/article');
+    // }
 
     public function detail($slug)
     {
