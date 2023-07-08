@@ -38,7 +38,7 @@ class ArticleController extends BaseController
             'content' => $this->request->getVar('content'),
             'slug' => url_title($this->request->getvar('title'), '-', TRUE)
         ]);
-        return redirect()->to('/admin');
+        return redirect()->to('/admin/article');
     }
 
     public function detail($slug)
@@ -82,12 +82,12 @@ class ArticleController extends BaseController
             'slug' => $slug
         ]);
 
-        return redirect()->to('/admin');
+        return redirect()->to('/admin/article');
     }
 
     public function destroy($id)
     {
         $this->articleModel->delete($id);
-        return redirect()->to('/admin');
+        return redirect()->to('/admin/article');
     }
 }
