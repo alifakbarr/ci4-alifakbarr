@@ -113,11 +113,8 @@ class ArticleController extends BaseController
             return redirect()->to('/admin/article');
         } else {
             $data['validation'] = $this->validator;
-            echo view('/admin/article/create', $data);
+            echo view('/admin/article/edit', $data);
         }
-
-
-        return redirect()->to('/admin/article');
     }
 
     public function destroy($id)
