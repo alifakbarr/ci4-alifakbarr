@@ -17,6 +17,9 @@
                     <th scope="col" class="px-6 py-3">
                         Title
                     </th>
+                    <th scope="col" class="px-6 py-3">
+                        Color
+                    </th>
                     <th scope="col" class="px-6 py-3 text-center">
                         Created At
                     </th>
@@ -34,7 +37,9 @@
                         </th>
                         <th scope="row" class="px-6 py-4 font-medium text-white whitespace-wrap">
                             <?= $a['name'] ?>
-                            </a>
+                        </th>
+                        <th scope="row" class="px-6 py-4 font-medium text-white whitespace-wrap">
+                            <span class="<?= $a['color'] ?> text-white text-xs font-medium mr-2 px-2.5 py-0.5 rounded">Color</span>
                         </th>
                         <td class="px-6 py-4 text-center">
                             <?= date("d M Y", strtotime($a['created_at'])) ?>

@@ -11,13 +11,20 @@
         <form action="/admin/category/save" method="post">
             <?= csrf_field() ?>
             <div>
-            </div>
-            <div>
                 <label for="title" class="block mb-2 text-normal font-medium text-white">Name</label>
                 <input type="text" id="title" class="bg-white text-black text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" placeholder="Insert name category here..." name="name">
                 <?php if ($validation->getError('name')) { ?>
                     <div class='text-red-500 mt-2'>
                         <?= $error = $validation->getError('name'); ?>
+                    </div>
+                <?php } ?>
+            </div>
+            <div>
+                <label for="color" class="block mb-2 mt-2 text-normal font-medium text-white">Color</label>
+                <input type="text" id="color" class="bg-white text-black text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" placeholder="Insert name category here..." name="color">
+                <?php if ($validation->getError('color')) { ?>
+                    <div class='text-red-500 mt-2'>
+                        <?= $error = $validation->getError('color'); ?>
                     </div>
                 <?php } ?>
             </div>

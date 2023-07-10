@@ -39,11 +39,13 @@ class CategoryController extends BaseController
         helper(['form']);
         $rules = [
             'name' => 'required|min_length[2]|max_length[20]|is_unique[categories.name]',
+            'color' => 'required|min_length[2]|max_length[20]|is_unique[categories.color]',
         ];
 
         if ($this->validate($rules)) {
             $data = [
                 'name' => $this->request->getVar('name'),
+                'color' => $this->request->getVar('color'),
             ];
 
             $this->categoryModel->save($data);
@@ -73,13 +75,13 @@ class CategoryController extends BaseController
         ];
         helper(['form']);
         $rules = [
-            'name' => 'required|min_length[2]|max_length[20]|is_unique[categories.name]',
-
+            'name' => 'required|min_length[2]|max_length[20]',
+            'color' => 'required|min_length[5]|max_length[20]',
         ];
-
         if ($this->validate($rules)) {
             $data = [
                 'name' => $this->request->getVar('name'),
+                'color' => $this->request->getVar('color'),
             ];
 
             $this->categoryModel->update(['id' => $id], $data);
