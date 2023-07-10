@@ -38,7 +38,7 @@ class CategoryController extends BaseController
         ];
         helper(['form']);
         $rules = [
-            'name' => 'required|min_length[2]|max_length[20]|is_unique[categorys.name]',
+            'name' => 'required|min_length[2]|max_length[20]|is_unique[categories.name]',
         ];
 
         if ($this->validate($rules)) {
@@ -73,7 +73,7 @@ class CategoryController extends BaseController
         ];
         helper(['form']);
         $rules = [
-            'name' => 'required|min_length[2]|max_length[20]|is_unique[categorys.name]',
+            'name' => 'required|min_length[2]|max_length[20]|is_unique[categories.name]',
 
         ];
 
