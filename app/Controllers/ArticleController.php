@@ -44,6 +44,7 @@ class ArticleController extends BaseController
 
         if ($this->validate($rules)) {
             $data = [
+                'slug' => url_title($this->request->getvar('title'), '-', TRUE),
                 'title' => $this->request->getVar('title'),
                 'content' => $this->request->getVar('content'),
             ];
@@ -55,16 +56,6 @@ class ArticleController extends BaseController
             echo view('/admin/article/create', $data);
         }
     }
-
-    // public function save()
-    // {
-    //     $this->articleModel->save([
-    //         'title' => $this->request->getVar('title'),
-    //         'content' => $this->request->getVar('content'),
-    //         'slug' => url_title($this->request->getvar('title'), '-', TRUE)
-    //     ]);
-    //     return redirect()->to('/admin/article');
-    // }
 
     public function detail($slug)
     {
@@ -100,12 +91,36 @@ class ArticleController extends BaseController
 
     public function update($id)
     {
-        $slug = url_title($this->request->getVar('title'), '-', true);
-        $this->articleModel->update(['id' => $id], [
-            'title' => $this->request->getPost('title'),
-            'content' => $this->request->getPost('content'),
-            'slug' => $slug
-        ]);
+        $data = [
+            'title' => 'Edit Article'
+        ];
+        helper(['form']);
+        $rules = [
+            'title' => 'required|min_length[10]|max_length[50]',
+            'content' => 'required',
+        ];
+
+        if ($this->validate($rules)) {
+            $slug = url_title($this->request->getVar('title'), '-', true);
+
+            $data = [
+                'slug' => $slug,
+                'title' => $this->request->getPost('title'),
+                'content' => $this->request->getPost('content'),
+            ];
+
+            $this->articleModel->update(['id' => $id], $data);
+            return redirect()->to('/admin/article');
+        } else {
+            $article = $this->articleModel->find($id);
+            $data = [
+                'article' => $article,
+                'validation' => $this->validator,
+                'title' => 'Edit Article'
+            ];
+            echo view('/admin/article/edit', $data);
+        }
+
 
         return redirect()->to('/admin/article');
     }

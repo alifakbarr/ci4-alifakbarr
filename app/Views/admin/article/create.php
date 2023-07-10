@@ -23,9 +23,9 @@
             </div>
             <div>
                 <label for="content" class="block mb-2 mt-4 text-normal font-medium text-white">Content</label>
-                <!-- <textarea id="editor" name="content" class="block p-2.5 w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea> -->
-                <input type="hidden" name="content">
-                <div id="editor" style="min-height: 160px;" class="bg-white" data-list="ordered"></div>
+                <textarea id="editor" name="content" class="block p-2.5 w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+                <!-- <input type="hidden" name="content">
+                <div id="editor" style="min-height: 160px;" class="bg-white" data-list="ordered"></div> -->
                 <?php if ($validation->getError('content')) { ?>
                     <div class='text-red-500 mt-2'>
                         <?= $error = $validation->getError('content'); ?>
