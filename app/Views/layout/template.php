@@ -70,7 +70,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/admin/article" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
+                        <a href="/admin/category" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
                             <img src="/img/application.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
                             <span class="flex-1 ml-3 whitespace-nowrap">Category Management</span>
                         </a>

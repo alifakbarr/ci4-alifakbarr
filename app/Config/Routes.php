@@ -46,6 +46,7 @@ $routes->group('', function ($routes) {
 // $routes->get('/admin', 'AdminController::index', ['filter' => 'role:admin']);
 // admin-article
 $routes->group('admin', ['filter' => 'role:admin'], function ($routes) {
+    // article Management
     $routes->get('article/', 'ArticleController::index');
     $routes->get('article/create', 'ArticleController::create');
     $routes->get('article/edit/(:segment)', 'ArticleController::edit/$1');
@@ -53,8 +54,16 @@ $routes->group('admin', ['filter' => 'role:admin'], function ($routes) {
     $routes->post('article/save', 'ArticleController::save');
     $routes->delete('article/(:num)', 'ArticleController::destroy/$1');
     $routes->get('article/(:any)', 'ArticleController::detail/$1');
+    // User Management
     $routes->get('userManagement', 'UserManagementController::index');
     $routes->get('userManagement/(:num)', 'UserManagementCOntroller::detail/$1');
+    // Category Management
+    $routes->get('category/', 'CategoryController::index');
+    $routes->get('category/create', 'CategoryController::create');
+    $routes->post('category/save', 'CategoryController::save');
+    $routes->get('category/edit/(:segment)', 'CategoryController::edit/$1');
+    $routes->post('category/update/(:any)', 'CategoryController::update/$1');
+    $routes->delete('category/(:num)', 'CategoryController::destroy/$1');
 });
 
 // home
