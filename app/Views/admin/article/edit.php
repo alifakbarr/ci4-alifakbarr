@@ -1,7 +1,7 @@
 <?= $this->extend('/layout/template') ?>
 <?= $this->section('content') ?>
 <div class="w-full p-4 mb-5 text-center border border-gray-200 rounded-lg shadow sm:p-8 bg-yellow-400">
-    <h5 class="mb-2 text-3xl font-bold text-black ">Create Article</h5>
+    <h5 class="mb-2 text-3xl font-bold text-black ">Edit Article</h5>
     <p class="mb-5 italic text-base text-black sm:text-base ">Try type something</p>
 </div>
 <div class="p-4 border-2 border-white border rounded-lg">

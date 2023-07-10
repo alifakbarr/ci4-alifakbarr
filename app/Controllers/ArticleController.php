@@ -105,20 +105,15 @@ class ArticleController extends BaseController
 
             $data = [
                 'slug' => $slug,
-                'title' => $this->request->getPost('title'),
-                'content' => $this->request->getPost('content'),
+                'title' => $this->request->getVar('title'),
+                'content' => $this->request->getVar('content'),
             ];
 
             $this->articleModel->update(['id' => $id], $data);
             return redirect()->to('/admin/article');
         } else {
-            $article = $this->articleModel->find($id);
-            $data = [
-                'article' => $article,
-                'validation' => $this->validator,
-                'title' => 'Edit Article'
-            ];
-            echo view('/admin/article/edit', $data);
+            $data['validation'] = $this->validator;
+            echo view('/admin/article/create', $data);
         }
 
 
