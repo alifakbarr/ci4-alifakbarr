@@ -34,10 +34,10 @@ class HomeController extends BaseController
 
         $data = [
             'title' => 'Detail Article',
-            'article' => $this->articleModel->orderBy('created_at DESC')->paginate(20, 'articles'),
+            'article' => $this->articleModel->orderBy('created_at DESC')->paginate(15, 'articles'),
             'pager' => $this->articleModel->pager,
         ];
-        return view('home/detailArticle', $data);
+        return view('home/articles', $data);
     }
 
     public function detailArticle($slug)

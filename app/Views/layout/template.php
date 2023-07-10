@@ -18,7 +18,9 @@
         }
     </script>
     <!-- ckeditor -->
-    <script src="<?= base_url('build/ckeditor.js') ?>"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/38.1.0/classic/ckeditor.js"></script>
+    <!-- <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> -->
     <!-- flowbite css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <title><?= $title ?></title>
@@ -179,6 +181,12 @@
             .catch(error => {
                 console.error(error);
             });
+        // var quill = new Quill('#editor', {
+        //     theme: 'snow'
+        // });
+        // quill.on('text-change', function(delta, oldDelta, source) {
+        //     document.querySelector("input[name='content']").value = quill.root.innerHTML;
+        // });
     </script>
 </body>
 

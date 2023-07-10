@@ -33,12 +33,28 @@ class ArticleController extends BaseController
 
     public function save()
     {
-        $this->articleModel->save([
-            'title' => $this->request->getVar('title'),
-            'content' => $this->request->getVar('content'),
-            'slug' => url_title($this->request->getvar('title'), '-', TRUE)
-        ]);
-        return redirect()->to('/admin');
+        $data = [
+            'title' => 'Create Article'
+        ];
+        helper(['form']);
+        $rules = [
+            'title' => 'required|min_length[10]|max_length[50]',
+            'content' => 'required',
+        ];
+
+        if ($this->validate($rules)) {
+            $data = [
+                'slug' => url_title($this->request->getvar('title'), '-', TRUE),
+                'title' => $this->request->getVar('title'),
+                'content' => $this->request->getVar('content'),
+            ];
+
+            $this->articleModel->save($data);
+            return redirect()->to('/admin/article');
+        } else {
+            $data['validation'] = $this->validator;
+            echo view('/admin/article/create', $data);
+        }
     }
 
     public function detail($slug)
@@ -75,19 +91,38 @@ class ArticleController extends BaseController
 
     public function update($id)
     {
-        $slug = url_title($this->request->getVar('title'), '-', true);
-        $this->articleModel->update(['id' => $id], [
-            'title' => $this->request->getPost('title'),
-            'content' => $this->request->getPost('content'),
-            'slug' => $slug
-        ]);
+        $data = [
+            'title' => 'Edit Article'
+        ];
+        helper(['form']);
+        $rules = [
+            'title' => 'required|min_length[10]|max_length[50]',
+            'content' => 'required',
+        ];
 
-        return redirect()->to('/admin');
+        if ($this->validate($rules)) {
+            $slug = url_title($this->request->getVar('title'), '-', true);
+
+            $data = [
+                'slug' => $slug,
+                'title' => $this->request->getVar('title'),
+                'content' => $this->request->getVar('content'),
+            ];
+
+            $this->articleModel->update(['id' => $id], $data);
+            return redirect()->to('/admin/article');
+        } else {
+            $data['validation'] = $this->validator;
+            echo view('/admin/article/create', $data);
+        }
+
+
+        return redirect()->to('/admin/article');
     }
 
     public function destroy($id)
     {
         $this->articleModel->delete($id);
-        return redirect()->to('/admin');
+        return redirect()->to('/admin/article');
     }
 }
