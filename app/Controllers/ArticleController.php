@@ -145,7 +145,16 @@ class ArticleController extends BaseController
 
     public function destroy($id)
     {
-        $this->articleModel->delete($id);
+        $articleModel = new ArticleModel();
+        $article = $articleModel->find($id);
+        if ($article === null) {
+            return redirect()->to('/admin/article');
+        }
+
+        $articleCategoryModel = new ArticleCategoryModel();
+        $articleCategoryModel->where('article_id', $id)->delete();
+        $articleModel->delete($id);
+
         return redirect()->to('/admin/article');
     }
 }
