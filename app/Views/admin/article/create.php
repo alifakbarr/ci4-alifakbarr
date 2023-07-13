@@ -11,8 +11,6 @@
         <form action="/admin/article/save" method="post">
             <?= csrf_field() ?>
             <div>
-            </div>
-            <div>
                 <label for="title" class="block mb-2 text-normal font-medium text-white">Title</label>
                 <input type="text" id="title" class="bg-white text-black text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" placeholder="Insert title here..." name="title">
                 <?php if ($validation->getError('title')) { ?>
@@ -22,7 +20,13 @@
                 <?php } ?>
             </div>
             <div>
-                <label for="content" class="block mb-2 mt-4 text-normal font-medium text-white">Content</label>
+                <label for="countries_multiple" class="block my-2 text-sm font-medium text-white">Share to</label>
+                <select multiple id="mySelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1">
+                    <option value="public">public</option>
+                </select>
+            </div>
+            <div>
+                <label for="content" class="block mb-2 mt-2 text-normal font-medium text-white">Content</label>
                 <textarea id="editor" name="content" class="block p-2.5 w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
                 <!-- <input type="hidden" name="content">
                 <div id="editor" style="min-height: 160px;" class="bg-white" data-list="ordered"></div> -->
@@ -36,6 +40,6 @@
             <button type="submit" class="text-white bg-sky-500 font-medium rounded-2xl text-sm px-6 py-1 text-center mt-4 mr-2 mb-2">Save</button>
         </form>
     </div>
-
 </div>
+
 <?= $this->endSection() ?>

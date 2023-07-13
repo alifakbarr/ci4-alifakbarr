@@ -47,4 +47,9 @@ class CategoryModel extends Model
 
         return $this->where(['id' => $id])->first();
     }
+
+    public function articles()
+    {
+        return $this->belongsToMany(ArticleModel::class, 'article_categories');
+    }
 }

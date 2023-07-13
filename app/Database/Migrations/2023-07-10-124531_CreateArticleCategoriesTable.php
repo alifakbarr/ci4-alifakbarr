@@ -30,6 +30,7 @@ class CreateArticleCategoriesTable extends Migration
 
         ]);
         $this->forge->addKey('id', true);
+        $this->forge->addUniqueKey(['article_id', 'category_id']);
         $this->forge->addForeignKey('article_id', 'articles', 'id', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('category_id', 'categories', 'id', 'CASCADE', 'CASCADE');
         $this->forge->createTable('article_categories');

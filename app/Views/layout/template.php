@@ -23,6 +23,8 @@
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> -->
     <!-- flowbite css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <!-- select2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
     <title><?= $title ?></title>
 
     <style>
@@ -177,6 +179,8 @@
 
     <!-- flowbite js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <!-- select2 -->
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
     <!-- ck editor -->
     <script>
         ClassicEditor
@@ -195,5 +199,8 @@
         // });
     </script>
 </body>
+<script>
+    new MultiSelectTag('mySelect') // id
+</script>
 
 </html>
