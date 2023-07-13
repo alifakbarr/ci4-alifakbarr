@@ -3,15 +3,21 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\ArticleCategoryModel;
 use App\Models\ArticleModel;
+use App\Models\CategoryModel;
 
 class ArticleController extends BaseController
 {
     protected $articleModel;
+    protected $categoryModel;
+    protected $articleCategoriesModel;
 
     public function __construct()
     {
+        $this->categoryModel = new CategoryModel();
         $this->articleModel = new ArticleModel();
+        $this->articleCategoriesModel = new ArticleCategoryModel();
     }
 
     public function index()
@@ -25,8 +31,10 @@ class ArticleController extends BaseController
 
     public function create()
     {
+        $category = $this->categoryModel->findAll();
         $data = [
-            'title' => 'Create Article'
+            'title' => 'Create Article',
+            'category' => $category
         ];
         return view('admin/article/create', $data);
     }
@@ -36,25 +44,43 @@ class ArticleController extends BaseController
         $data = [
             'title' => 'Create Article'
         ];
-        helper(['form']);
-        $rules = [
+        $validation = \Config\Services::validation();
+        $validation->setRules([
             'title' => 'required|min_length[10]|max_length[50]',
+            'categories' => 'required',
             'content' => 'required',
-        ];
+        ]);
 
-        if ($this->validate($rules)) {
+        if (!$validation->withRequest($this->request)->run()) {
+            return redirect()->back()->withInput()->with('errors', $validation->getErrors());
+        }
+
+        $title = $this->request->getPost('title');
+        $content = $this->request->getPost('content');
+        $categories = $this->request->getPost('categories');
+
+        $articleModel = new ArticleModel();
+        // save article
+        $data = [
+            'slug' => url_title($this->request->getvar('title'), '-', TRUE),
+            'title' => $title,
+            'content' => $content,
+        ];
+        $articleModel->insert($data);
+        $articleId = $articleModel->insertID;
+
+        $articleCategoryModel = new ArticleCategoryModel();
+
+        $categories = $this->request->getVar('categories');
+        foreach ($categories as $categoryId) {
             $data = [
-                'slug' => url_title($this->request->getvar('title'), '-', TRUE),
-                'title' => $this->request->getVar('title'),
-                'content' => $this->request->getVar('content'),
+                'article_id' => $articleId,
+                'category_id' => $categoryId,
             ];
 
-            $this->articleModel->save($data);
-            return redirect()->to('/admin/article');
-        } else {
-            $data['validation'] = $this->validator;
-            echo view('/admin/article/create', $data);
+            $articleCategoryModel->insert($data);
         }
+        return redirect()->to('/admin/article')->with('success', 'Article created successfully');
     }
 
     public function detail($slug)
