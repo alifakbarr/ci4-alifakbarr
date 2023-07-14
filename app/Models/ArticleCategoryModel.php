@@ -4,16 +4,16 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class CategoryModel extends Model
+class ArticleCategoryModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'categories';
+    protected $table            = 'article_categories';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['name', 'color'];
+    protected $allowedFields    = ['article_id', 'category_id'];
 
     // Dates
     protected $useTimestamps = false;
@@ -38,18 +38,4 @@ class CategoryModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-
-    public function getCategory($id = 0)
-    {
-        if ($id == 0) {
-            return $this->findAll();
-        }
-
-        return $this->where(['id' => $id])->first();
-    }
-
-    public function articles()
-    {
-        return $this->belongsToMany(ArticleModel::class, 'article_categories');
-    }
 }

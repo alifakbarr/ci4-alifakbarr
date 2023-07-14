@@ -47,4 +47,21 @@ class ArticleModel extends Model
 
         return $this->where(['slug' => $slug])->first();
     }
+
+    public function categories()
+    {
+        return $this->belongsToMany(CategoryModel::class, 'article_categories');
+    }
+
+    public function getArticleWithCategories($slug)
+    {
+        $builder = $this->db->table('articles');
+        $builder->select('articles.*, categories.name');
+        $builder->join('article_categories', 'article_categories.article_id = articles.id');
+        $builder->join('categories', 'categories.id = article_categories.category_id');
+        $builder->where('articles.slug', $slug);
+        $query = $builder->get();
+
+        return $query->getResultArray();
+    }
 }

@@ -2,14 +2,18 @@
 <?= $this->section('content') ?>
 <div class="p-4 border-2 border-white border rounded-lg">
     <div class="w-full p-4 mb-1 text-center  border border-gray-200 rounded-lg shadow sm:p-8 bg-yellow-400">
-        <h5 class="mb-2 text-3xl font-bold text-black "><?= $article['title'] ?></h5>
-        <p class="mb-5 italic text-base text-black sm:text-base ">Laravel, MySql, MVC.</p>
+        <h5 class="mb-2 text-3xl font-bold text-black "><?= $article[0]['title'] ?></h5>
+        <p class="mb-5 italic text-base text-black sm:text-base ">
+            <?php foreach ($article as $c) : ?>
+                <?= $c['name'] ?>,
+            <?php endforeach ?>
+        </p>
     </div>
-    <p class="text-white text-sm italic mb-2 text-right">Created At : <?= date("d M Y", strtotime($article['created_at'])) ?> // Updated At : <?= date("d M Y", strtotime($article['updated_at'])) ?></p>
-    <a href="/admin/article/edit/<?= $article['slug'] ?>" type="button" class="text-black bg-yellow-300 font-medium rounded-2xl text-sm px-6 py-1 text-center mr-2 mb-2">Edit</a>
+    <p class="text-white text-sm italic mb-2 text-right">Created At : <?= date("d M Y", strtotime($article[0]['created_at'])) ?> // Updated At : <?= date("d M Y", strtotime($article[0]['updated_at'])) ?></p>
+    <a href="/admin/article/edit/<?= $article[0]['slug'] ?>" type="button" class="text-black bg-yellow-300 font-medium rounded-2xl text-sm px-6 py-1 text-center mr-2 mb-2">Edit</a>
     <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" type="button" class="text-black bg-rose-600 font-medium rounded-2xl text-sm px-6 py-1 text-center mr-2 mb-2">Delete</button>
     <div class="text-white text-justify tracking-tighter leading-relaxed mt-1 ">
-        <?= $article['content'] ?>
+        <?= $article[0]['content'] ?>
     </div>
 
     <!-- modal -->
@@ -27,7 +31,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                     <h3 class="mb-5 text-lg font-semibold text-black tracking-tighter">Are you sure you want to delete this article?</h3>
-                    <form action="/admin/article/<?= $article['id'] ?>" method="post" class="inline">
+                    <form action="/admin/article/<?= $article[0]['id'] ?>" method="post" class="inline">
                         <?php csrf_field() ?>
                         <input type="hidden" name="_method" value="DELETE">
                         <button data-modal-hide="popup-modal" type="submit" class="text-white bg-rose-600 font-medium rounded-3xl text-sm inline-flex items-center px-5 py-1.5 text-center mr-2">
@@ -37,7 +41,7 @@
 
                 </div>
             </div>
-
         </div>
     </div>
-    <?= $this->endSection() ?>
+</div>
+<?= $this->endSection() ?>
