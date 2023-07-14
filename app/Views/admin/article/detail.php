@@ -3,7 +3,11 @@
 <div class="p-4 border-2 border-white border rounded-lg">
     <div class="w-full p-4 mb-1 text-center  border border-gray-200 rounded-lg shadow sm:p-8 bg-yellow-400">
         <h5 class="mb-2 text-3xl font-bold text-black "><?= $article['title'] ?></h5>
-        <p class="mb-5 italic text-base text-black sm:text-base ">Laravel, MySql, MVC.</p>
+        <p class="mb-5 italic text-base text-black sm:text-base ">
+            <?php foreach ($categories as $c) : ?>
+                <?= $c['name'] ?>
+            <?php endforeach ?>
+        </p>
     </div>
     <p class="text-white text-sm italic mb-2 text-right">Created At : <?= date("d M Y", strtotime($article['created_at'])) ?> // Updated At : <?= date("d M Y", strtotime($article['updated_at'])) ?></p>
     <a href="/admin/article/edit/<?= $article['slug'] ?>" type="button" class="text-black bg-yellow-300 font-medium rounded-2xl text-sm px-6 py-1 text-center mr-2 mb-2">Edit</a>

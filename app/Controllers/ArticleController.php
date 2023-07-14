@@ -91,9 +91,17 @@ class ArticleController extends BaseController
         } else {
             $title = 'title not found';
         }
+
+        $articleCategoryModel = new ArticleCategoryModel();
+        $selectedCategories = $articleCategoryModel->where('article_id', $article['id'])->findAll();
+
+        $categoryModel = new CategoryModel();
+        $categories = $categoryModel->where('id', $selectedCategories);
         $data = [
             'title' => $title,
-            'article' => $this->articleModel->getArticle($slug)
+            'article' => $this->articleModel->getArticle($slug),
+            'selectedCategories' => $selectedCategories,
+            'categories' => $categories
         ];
 
         // jika komik tidak ada
@@ -106,10 +114,25 @@ class ArticleController extends BaseController
 
     public function edit($slug)
     {
-        $article = $this->articleModel->getArticle($slug);
+        $articleModel = new ArticleModel();
+        $article = $articleModel->getArticle($slug);
+
+
+        if ($article === null) {
+            // Artikel tidak ditemukan, tangani sesuai kebutuhan (misalnya, tampilkan pesan error atau redirect ke halaman lain)
+        }
+
+        $categoryModel = new CategoryModel();
+        $categories = $categoryModel->findAll();
+
+        $articleCategoryModel = new ArticleCategoryModel();
+        $selectedCategories = $articleCategoryModel->where('article_id', $article['id'])->findAll();
+
         $data = [
             'title' => $article['title'],
-            'article' => $this->articleModel->getArticle($slug)
+            'article' => $article,
+            'selectedCategories' => $selectedCategories,
+            'categories' => $categories
         ];
 
         return view('/admin/article/edit', $data);
@@ -117,30 +140,42 @@ class ArticleController extends BaseController
 
     public function update($id)
     {
-        $data = [
-            'title' => 'Edit Article'
-        ];
-        helper(['form']);
-        $rules = [
-            'title' => 'required|min_length[10]|max_length[50]',
-            'content' => 'required',
-        ];
+        // $validation = \Config\Services::validation();
+        // $validation->setRules = [
+        //     'title' => 'required|min_length[10]|max_length[50]',
+        //     'content' => 'required',
+        //     'categories' => 'required',
+        // ];
 
-        if ($this->validate($rules)) {
-            $slug = url_title($this->request->getVar('title'), '-', true);
+        // // cek validasi
+        // if (!$validation->withRequest($this->request)->run()) {
+        //     return redirect()->back()->withInput()->with('errors', $validation->getErrors());
+        // }
 
+        $title = $this->request->getPost('title');
+        $content = $this->request->getPost('content');
+        $categories = $this->request->getPost('categories');
+        $slug = url_title($this->request->getVar('title'), '-', true);
+
+        $articleModel = new ArticleModel();
+        $articleModel->update($id, [
+            'slug' => $slug,
+            'title' => $title,
+            'content' => $content,
+        ]);
+
+        $articleCategoryModel = new ArticleCategoryModel();
+        $articleCategoryModel->where('article_id', $id)->delete();
+
+        foreach ($categories as $categoryId) {
             $data = [
-                'slug' => $slug,
-                'title' => $this->request->getVar('title'),
-                'content' => $this->request->getVar('content'),
+                'article_id' => $id,
+                'category_id' => $categoryId,
             ];
-
-            $this->articleModel->update(['id' => $id], $data);
-            return redirect()->to('/admin/article');
-        } else {
-            $data['validation'] = $this->validator;
-            echo view('/admin/article/edit', $data);
+            $articleCategoryModel->insert($data);
         }
+
+        return redirect()->to('/admin/article');;
     }
 
     public function destroy($id)

@@ -6,7 +6,6 @@
 </div>
 <div class="p-4 border-2 border-white border rounded-lg">
     <div class="relative overflow-x-auto">
-        <!-- <form action="/admin/article/save" method="post"> -->
         <?php $validation = \Config\Services::validation(); ?>
         <form action="/admin/article/save" method="post">
             <?= csrf_field() ?>
@@ -31,12 +30,9 @@
             <div>
                 <label for="content" class="block mb-2 mt-2 text-normal font-medium text-white">Content</label>
                 <textarea id="editor" name="content" class="block p-2.5 w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
-                <!-- <input type="hidden" name="content">
-                <div id="editor" style="min-height: 160px;" class="bg-white" data-list="ordered"></div> -->
                 <?php if (session('errors.content')) : ?>
                     <p class="text-red-500 mt-2"><?= session('errors.content') ?></p>
                 <?php endif; ?>
-                <!-- <textarea id="editor" name="content" cols="127" rows="10" placeholder="Tuliskan isi pikiranmu..."></textarea> -->
             </div>
             <button type="submit" class="text-white bg-sky-500 font-medium rounded-2xl text-sm px-6 py-1 text-center mt-4 mr-2 mb-2">Save</button>
         </form>
