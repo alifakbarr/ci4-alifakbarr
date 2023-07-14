@@ -86,5 +86,7 @@
         </div>
     </div>
 <?php endforeach ?>
-
+<div class="mt-5 flex justify-center">
+    <?= $pager->links('categories', 'category_pagination') ?>
+</div>
 <?= $this->endSection() ?>
