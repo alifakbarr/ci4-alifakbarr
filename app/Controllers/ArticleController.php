@@ -134,17 +134,17 @@ class ArticleController extends BaseController
 
     public function update($id)
     {
-        // $validation = \Config\Services::validation();
-        // $validation->setRules = [
-        //     'title' => 'required|min_length[10]|max_length[50]',
-        //     'content' => 'required',
-        //     'categories' => 'required',
-        // ];
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'title' => 'required|min_length[10]|max_length[50]',
+            'content' => 'required',
+            'categories' => 'required',
+        ]);
 
-        // // cek validasi
-        // if (!$validation->withRequest($this->request)->run()) {
-        //     return redirect()->back()->withInput()->with('errors', $validation->getErrors());
-        // }
+        // cek validasi
+        if (!$validation->withRequest($this->request)->run()) {
+            return redirect()->back()->withInput()->with('errors', $validation->getErrors());
+        }
 
         $title = $this->request->getPost('title');
         $content = $this->request->getPost('content');
