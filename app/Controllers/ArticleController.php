@@ -85,23 +85,17 @@ class ArticleController extends BaseController
 
     public function detail($slug)
     {
-        $article = $this->articleModel->getArticle($slug);
+        $articleModel = new ArticleModel();
+        $article = $articleModel->getArticleWithCategories($slug);
         if ($article == true) {
-            $title = $article['title'];
+            $title = $article[0]['title'];
         } else {
             $title = 'title not found';
         }
 
-        $articleCategoryModel = new ArticleCategoryModel();
-        $selectedCategories = $articleCategoryModel->where('article_id', $article['id'])->findAll();
-
-        $categoryModel = new CategoryModel();
-        $categories = $categoryModel->where('id', $selectedCategories);
         $data = [
             'title' => $title,
-            'article' => $this->articleModel->getArticle($slug),
-            'selectedCategories' => $selectedCategories,
-            'categories' => $categories
+            'article' => $article,
         ];
 
         // jika komik tidak ada
