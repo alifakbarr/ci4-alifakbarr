@@ -16,9 +16,14 @@ class CategoryController extends BaseController
 
     public function index()
     {
+        // pagination
+        $currentPage = $this->request->getVar('page_categories') ? $this->request->getVar('page_categories') : 1;
+
         $data = [
             'title' => 'Admin | Category Management',
-            'category' => $this->categoryModel->findAll(),
+            'category' => $this->categoryModel->orderBy('created_at DESC')->paginate(25, 'categories'),
+            'pager' => $this->categoryModel->pager,
+            'currentPage' => $currentPage
         ];
         return view('admin/category/index', $data);
     }

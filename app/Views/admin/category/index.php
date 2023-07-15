@@ -29,7 +29,8 @@
                 </tr>
             </thead>
             <tbody>
-                <?php $no = 1 ?>
+                <!-- perhitungan pagination -->
+                <?php $no = 1 + (25 * ($currentPage - 1)) ?>
                 <?php foreach ($category as $a) : ?>
                     <tr class="border-b bg-black">
                         <th scope="row" class="px-6 py-4 font-medium text-white whitespace-wrap">
@@ -86,5 +87,7 @@
         </div>
     </div>
 <?php endforeach ?>
-
+<div class="mt-5 flex justify-center">
+    <?= $pager->links('categories', 'category_pagination') ?>
+</div>
 <?= $this->endSection() ?>
