@@ -22,6 +22,9 @@
                     <option value="private" selected>Private</option>
                     <option value="public">Public</option>
                 </select>
+                <?php if (session('errors.share')) : ?>
+                    <p class="text-red-500 mt-2"><?= session('errors.share') ?></p>
+                <?php endif; ?>
             </div>
             <div>
                 <label for="Status" class="block my-2 text-normal font-medium text-white">Status</label>
@@ -29,6 +32,9 @@
                     <option value="draft" selected>Draft</option>
                     <option value="finish">Finish</option>
                 </select>
+                <?php if (session('errors.status')) : ?>
+                    <p class="text-red-500 mt-2"><?= session('errors.status') ?></p>
+                <?php endif; ?>
             </div>
             <div>
                 <label for="countries_multiple" class="block my-2 text-sm font-medium text-white">Category</label>
