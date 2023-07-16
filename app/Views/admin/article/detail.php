@@ -3,6 +3,7 @@
 <div class="p-4 border-2 border-white border rounded-lg">
     <div class="w-full p-4 mb-1 text-center  border border-gray-200 rounded-lg shadow sm:p-8 bg-yellow-400">
         <h5 class="mb-2 text-3xl font-bold text-black "><?= $article[0]['title'] ?></h5>
+        <p class="mb-2 text-lg font-bold text-black ">Share : <?= ucwords($article[0]['share']) ?> | Status : <?= ucwords($article[0]['status']) ?></p>
         <p class="mb-5 italic text-base text-black sm:text-base ">
             <?php foreach ($article as $c) : ?>
                 <?= $c['name'] ?>,
