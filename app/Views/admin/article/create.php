@@ -17,6 +17,20 @@
                 <?php endif; ?>
             </div>
             <div>
+                <label for="share" class="block my-2 text-normal font-medium text-white">Share To</label>
+                <select id="share" name="share" class="p-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                    <option value="private" selected>Private</option>
+                    <option value="public">Public</option>
+                </select>
+            </div>
+            <div>
+                <label for="Status" class="block my-2 text-normal font-medium text-white">Status</label>
+                <select id="Status" name="status" class="p-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                    <option value="draft" selected>Draft</option>
+                    <option value="finish">Finish</option>
+                </select>
+            </div>
+            <div>
                 <label for="countries_multiple" class="block my-2 text-sm font-medium text-white">Category</label>
                 <select multiple name="categories[]" id="mySelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
                     <?php foreach ($category as $c) : ?>

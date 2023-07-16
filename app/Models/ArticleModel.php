@@ -13,7 +13,7 @@ class ArticleModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['title', 'content', 'slug'];
+    protected $allowedFields    = ['title', 'content', 'slug', 'share', 'status'];
 
     // Dates
     protected $useTimestamps = false;

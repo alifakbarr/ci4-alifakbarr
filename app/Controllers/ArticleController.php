@@ -53,6 +53,8 @@ class ArticleController extends BaseController
         $validation = \Config\Services::validation();
         $validation->setRules([
             'title' => 'required|min_length[10]|max_length[50]',
+            'share' => 'required',
+            'status' => 'required',
             'categories' => 'required',
             'content' => 'required',
         ]);
@@ -63,6 +65,8 @@ class ArticleController extends BaseController
 
         $title = $this->request->getPost('title');
         $content = $this->request->getPost('content');
+        $share = $this->request->getPost('share');
+        $status = $this->request->getPost('status');
         $categories = $this->request->getPost('categories');
 
         $articleModel = new ArticleModel();
@@ -70,6 +74,8 @@ class ArticleController extends BaseController
         $data = [
             'slug' => url_title($this->request->getvar('title'), '-', TRUE),
             'title' => $title,
+            'share' => $share,
+            'status' => $status,
             'content' => $content,
         ];
         $articleModel->insert($data);
