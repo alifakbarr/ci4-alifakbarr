@@ -70,7 +70,7 @@ $routes->group('admin', ['filter' => 'role:admin'], function ($routes) {
 $routes->group('', function ($routes) {
     $routes->get('/', 'HomeController::index');
     $routes->get('/articles', 'HomeController::articles');
-    $routes->get('/articles/(:segment)', 'HomeController::detailArticle/$1');
+    $routes->get('/articles/(:any)', 'HomeController::detailArticle/$1');
     $routes->get('/signUp', 'HomeController::signUp');
     $routes->get('/signIn', 'HomeController::signIn');
 });
