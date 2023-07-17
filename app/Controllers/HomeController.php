@@ -42,16 +42,18 @@ class HomeController extends BaseController
 
     public function detailArticle($slug)
     {
-
-        $article = $this->articleModel->getArticle($slug);
+        $articleModel = new ArticleModel();
+        $article = $articleModel->getArticleWithCategories($slug);
+        dd($slug);
         if ($article == true) {
-            $title = $article['title'];
+            $title = $article[0]['title'];
         } else {
             $title = 'title not found';
         }
+
         $data = [
             'title' => $title,
-            'article' => $this->articleModel->getArticle($slug)
+            'article' => $article,
         ];
 
         // jika komik tidak ada
