@@ -26,7 +26,8 @@
                 </tr>
             </thead>
             <tbody>
-                <?php $no = 1 ?>
+                <!-- perhitungan pagination -->
+                <?php $no = 1 + (2 * ($currentPage - 1)) ?>
                 <?php foreach ($article as $a) : ?>
                     <tr class="border-b bg-black">
                         <th scope="row" class="px-6 py-4 font-medium text-white whitespace-wrap">
@@ -49,5 +50,8 @@
             </tbody>
         </table>
     </div>
+</div>
+<div class="mt-5 flex justify-center">
+    <?= $pager->links('articles', 'custom_pagination') ?>
 </div>
 <?= $this->endSection() ?>

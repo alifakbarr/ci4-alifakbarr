@@ -34,7 +34,7 @@
         </div>
     </div>
     <div class="">
-        <?php $no = 1 ?>
+        <?php $no = 1 + (25 * ($currentPage - 1)) ?>
         <?php foreach ($article as $a) : ?>
             <div class="bg-neutral-900 p-3 px-4 mb-3 rounded flex items-start sm:items-center">
                 <h1 class="text-3xl font-bold sm:text-3xl text-white mr-3"><?= $no++ ?></h1>
@@ -48,7 +48,7 @@
             </div>
         <?php endforeach ?>
         <div class="mt-5 flex justify-center">
-            <?= $pager->links('articles', 'home_pagination') ?>
+            <?= $pager->links('articles', 'custom_pagination') ?>
         </div>
     </div>
 </div>
