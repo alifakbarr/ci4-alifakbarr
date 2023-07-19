@@ -11,7 +11,7 @@
             theme: {
                 extend: {
                     colors: {
-                        bgCard: '#17191a'
+                        // bgCard: '#17191a'
                     }
                 }
             }
@@ -29,12 +29,20 @@
 
     <style>
         .card:hover h1 {
-            color: rgb(234 179 8);
+            /* color: rgb(234 179 8); */
+            color: #fff;
         }
 
-        /* * {
-            font-family: 'Montserrat', sans-serif;
-        } */
+        .card:hover {
+            /* color: rgb(234 179 8); */
+            border-left: #fff 6px solid;
+            /* border-right: #fff 2px solid;
+            border-bottom: #fff 2px solid; */
+        }
+
+        * {
+            font-family: 'PT Sans', sans-serif;
+        }
     </style>
 </head>
 

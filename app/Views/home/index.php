@@ -56,13 +56,13 @@
                     <a href="/articles/<?= $a['slug'] ?>" class="card flex hover:scale-105 transition-transform duration-300 bg-neutral-900 rounded-lg p-4 mb-7">
                         <h1 class="text-3xl font-black sm:text-5xl text-zinc-700 mr-7 hover:text-yellow-500 transition-colors duration-300"><?= sprintf('%02d', $no++) ?></h1>
                         <div class="flex content-center items-start sm:items-center hover:underline hover:decoration-white"></div>
-                        <!-- <img src="/img/file.png" class="h-14 mr-2 sm:h-28" alt="file" /> -->
                         <div class="">
                             <h2 class="text-white text-base tracking-tighter leading-tight"><?= $a['title'] ?></h2>
                             <p class="text-zinc-500 text-xs mt-2"><?= date("d M Y", strtotime($a['created_at'])) ?></p>
                             <?php $categories = explode(', ', $a['category_names']); ?>
                             <?php foreach ($categories as $category) : ?>
-                                <span class="bg-zinc-400 rounded-xl px-1 text-black text-xs mt-2"><?= $category ?></span>
+                                <span class=" text-black text-xs font-medium mr-2 px-1 py-0.5 rounded-xl bg-zinc-400"><?= $category ?></span>
+
                             <?php endforeach ?>
                         </div>
                     </a>

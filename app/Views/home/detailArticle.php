@@ -1,34 +1,29 @@
 <?= $this->extend('/layout/template') ?>
 <?= $this->section('content') ?>
-<div class="p-4 border-2 border border-white rounded-lg bg-neutral-950">
-    <div class="flex items-center items-center bg-yellow-400 rounded-lg p-4">
-        <!-- <img class="h-20 sm:h-24 rounded-lg shadow-lg bg-zinc-900" src="<?= base_url('/img/file.png') ?>" alt="Bonnie image" /> -->
-        <div class="">
-            <p class="text-lg sm:text-2xl w-full tracking-tighter shadow-lg leading-tight font-medium text-white bg-zinc-900 rounded-lg p-3"><?= $article[0]['title'] ?></p>
-            <div class="p-3 mt-4 bg-zinc-900 rounded-lg shadow-lg">
-                <table class="text-white text-sm font-light ">
-                    <tr>
-                        <td class="pb-1">Created</td>
-                        <td class="pl-10 pb-1"><?= date("M d, Y, H:i", strtotime($article[0]['created_at'])) ?></td>
-                    </tr>
-                    <tr>
-                        <td class="pb-1">Last Modified</td>
-                        <td class="pl-10 pb-1"><?= date("M d, Y, H:i", strtotime($article[0]['updated_at'])) ?></td>
-                    </tr>
-                    <tr>
-                        <td>Category</td>
-                        <td class="pl-10">
-                            <?php foreach ($article as $c) : ?>
-                                <span class="<?= $c['color'] ?> text-white text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full"><?= $c['name'] ?></span>
-                            <?php endforeach ?>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
+<div class="rounded-lg pt-8 pb-24 px-9  bg-neutral-950">
+    <p class="text-lg sm:text-2xl w-full tracking-tighter shadow-lg leading-tight font-normal text-white pb-24">alifakbarr</p>
+    <p class="text-lg sm:text-3xl w-full tracking-tighter shadow-lg leading-tight font-bold text-white"><?= $article[0]['title'] ?></p>
+    <table class="my-9 text-white text-sm font-light ">
+        <tr>
+            <td class="pb-2">Created</td>
+            <td class="pl-10 pb-2"><?= date("M d, Y", strtotime($article[0]['created_at'])) ?></td>
+        </tr>
+        <tr>
+            <td class="pb-2">Last Modified</td>
+            <td class="pl-10 pb-2"><?= date("M d, Y", strtotime($article[0]['updated_at'])) ?></td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td class="pl-10">
+                <?php foreach ($article as $c) : ?>
+                    <!-- <span class="bg-zinc-400 rounded-xl px-1 text-black text-xs mt-2"><?= $c['name'] ?></span> -->
+                    <span class=" text-black text-xs font-medium mr-2 px-1 py-0.5 rounded-xl bg-zinc-400"><?= $c['name'] ?></span>
+                <?php endforeach ?>
+            </td>
+        </tr>
+    </table>
     <!-- <hr class="my-3 border-2 rounded-lg"> -->
-    <div class="bg-zinc-900 rounded-lg mt-4 px-7 pb-4 text-white font-light sm:font-normal">
+    <div class="rounded-lg pb-4 text-neutral-100 font-light text-base leading-relaxed ">
         <?= $article[0]['content'] ?>
     </div>
 </div>
