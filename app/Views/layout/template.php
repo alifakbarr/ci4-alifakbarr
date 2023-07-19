@@ -57,7 +57,7 @@
     <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto bg-neutral-950 shadow-2xl">
             <a href="/" class="flex items-center pl-2.5 mb-5">
-                <img src="/img/notes2.png" class="h-6 mr-3 sm:h-7" alt="Flowbite Logo" />
+                <img src="/img/creative.png" class="h-6 mr-3 sm:h-7" alt=" Logo" />
                 <span class="self-center text-xl whitespace-nowrap text-white">CreativityCove</span>
             </a>
             <ul class="space-y-2 font-medium">
@@ -125,7 +125,7 @@
                             <span class="flex-1 ml-3 whitespace-nowrap">Portofolio</span>
                         </a>
                     <li>
-                        <a href="/admin" class="mb-5 flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
+                        <a href="/aboutMe" class="mb-5 flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
                             <img src="/img/information.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
                             <span class="flex-1 ml-3 whitespace-nowrap">About Me</span>
                         </a>

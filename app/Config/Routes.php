@@ -71,6 +71,7 @@ $routes->group('', function ($routes) {
     $routes->get('/', 'HomeController::index');
     $routes->get('/articles', 'HomeController::articles');
     $routes->get('/articles/(:any)', 'HomeController::detailArticle/$1');
+    $routes->get('/aboutMe', 'HomeController::aboutMe');
     $routes->get('/signUp', 'HomeController::signUp');
     $routes->get('/signIn', 'HomeController::signIn');
 });
