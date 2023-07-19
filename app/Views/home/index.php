@@ -37,33 +37,38 @@
     </div>
 </form>
 
-<div class="p-4 border-2 border border-white rounded-lg bg-neutral-950">
+<div class="p-4 rounded-lg bg-neutral-950">
     <div class="flex justify-between items-center mb-5 pb-3 border-b border-zinc-700">
         <div class="flex items-center ">
             <img src="/img/article.png" class="h-8 mr-1 sm:h-8" alt="instagram" />
-            <p class="italic text-base text-white">Latest Articles</p>
+            <p class="text-base text-white">Latest Articles</p>
         </div>
         <div class="">
-            <a href="/articles" class="text-sm text-white">See all articles</a>
-            <div class="border-b border-white"></div>
+            <a href="/articles" class="text-sm text-white">See all</a>
+            <!-- <div class="border-b border-white"></div> -->
         </div>
     </div>
     <div class="">
         <?php $no = 1 ?>
-        <div class="bg-neutral-900 p-3 px-4 mb-3 rounded grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class=" pt-3 mb-3 rounded">
             <?php foreach ($article as $a) : ?>
                 <div class="">
-                    <a href="/articles/<?= $a['slug'] ?>" class="card flex hover:scale-110 transition-transform duration-300">
-                        <h1 class="text-3xl font-black sm:text-5xl text-zinc-700 mr-3 hover:text-yellow-500 transition-colors duration-300"><?= sprintf('%02d', $no++) ?></h1>
+                    <a href="/articles/<?= $a['slug'] ?>" class="card flex hover:scale-105 transition-transform duration-300 bg-neutral-900 rounded-lg p-4 mb-7">
+                        <h1 class="text-3xl font-black sm:text-5xl text-zinc-700 mr-7 hover:text-yellow-500 transition-colors duration-300"><?= sprintf('%02d', $no++) ?></h1>
                         <div class="flex content-center items-start sm:items-center hover:underline hover:decoration-white"></div>
-                        <img src="/img/file.png" class="h-14 mr-2 sm:h-28" alt="file" />
+                        <!-- <img src="/img/file.png" class="h-14 mr-2 sm:h-28" alt="file" /> -->
                         <div class="">
                             <h2 class="text-white text-base tracking-tighter leading-tight"><?= $a['title'] ?></h2>
-                            <p class="text-zinc-500 text-sm"><?= date("d M Y", strtotime($a['created_at'])) ?></p>
+                            <p class="text-zinc-500 text-xs mt-2"><?= date("d M Y", strtotime($a['created_at'])) ?></p>
+                            <?php $categories = explode(', ', $a['category_names']); ?>
+                            <?php foreach ($categories as $category) : ?>
+                                <span class="bg-zinc-400 rounded-xl px-1 text-black text-xs mt-2"><?= $category ?></span>
+                            <?php endforeach ?>
                         </div>
                     </a>
                 </div>
             <?php endforeach ?>
+
         </div>
     </div>
 </div>

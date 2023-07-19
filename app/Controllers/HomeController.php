@@ -6,6 +6,8 @@ use App\Controllers\BaseController;
 use App\Models\ArticleModel;
 use App\Models\HomeModel;
 use App\Library\Globals;
+use App\Models\ArticleCategoryModel;
+use App\Models\CategoryModel;
 
 class HomeController extends BaseController
 {
@@ -20,10 +22,13 @@ class HomeController extends BaseController
 
     public function index()
     {
+        $articleModel = new ArticleModel();
 
+        $article = $articleModel->getAllArticle();
         $data = [
             'title' => 'Home',
-            'article' => $this->articleModel->orderBy('created_at DESC')->paginate(10, 'articles'),
+            // 'article' => $this->articleModel->orderBy('created_at DESC')->paginate(10, 'articles'),
+            'article' => $article,
             'pager' => $this->articleModel->pager,
         ];
         return view('home/index', $data);
@@ -31,11 +36,16 @@ class HomeController extends BaseController
 
     public function articles()
     {
+        $currentPage = $this->request->getVar('page_articles') ? $this->request->getVar('page_articles') : 1;
+        $articleModel = new ArticleModel();
 
+        $article = $articleModel->getAllArticle();
+        dd($article);
         $data = [
             'title' => 'Detail Article',
-            'article' => $this->articleModel->orderBy('created_at DESC')->paginate(15, 'articles'),
+            'article' =>  $article,
             'pager' => $this->articleModel->pager,
+            'currentPage' => $currentPage
         ];
         return view('home/articles', $data);
     }
@@ -44,13 +54,12 @@ class HomeController extends BaseController
     {
         $articleModel = new ArticleModel();
         $article = $articleModel->getArticleWithCategories($slug);
-        dd($slug);
+        // dd($article);
         if ($article == true) {
             $title = $article[0]['title'];
         } else {
             $title = 'title not found';
         }
-
         $data = [
             'title' => $title,
             'article' => $article,

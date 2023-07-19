@@ -51,5 +51,6 @@ class CategoryModel extends Model
     public function articles()
     {
         return $this->belongsToMany(ArticleModel::class, 'article_categories');
+        // return $this->belongsToMany(ArticleModel::class, 'article_categories', 'category_id', 'article_id');
     }
 }

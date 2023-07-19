@@ -31,6 +31,10 @@
         .card:hover h1 {
             color: rgb(234 179 8);
         }
+
+        /* * {
+            font-family: 'Montserrat', sans-serif;
+        } */
     </style>
 </head>
 
