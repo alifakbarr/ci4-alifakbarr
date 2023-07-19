@@ -57,11 +57,11 @@
                         <h1 class="text-3xl font-black sm:text-5xl text-zinc-700 mr-7 hover:text-yellow-500 transition-colors duration-300"><?= sprintf('%02d', $no++) ?></h1>
                         <div class="flex content-center items-start sm:items-center hover:underline hover:decoration-white"></div>
                         <div class="">
-                            <h2 class="text-white text-base tracking-tighter leading-tight"><?= $a['title'] ?></h2>
-                            <p class="text-zinc-500 text-xs mt-2"><?= date("d M Y", strtotime($a['created_at'])) ?></p>
+                            <h2 class="text-white text-base tracking-tight leading-tight"><?= $a['title'] ?></h2>
+                            <p class="text-zinc-500 text-xs my-2"><?= date("d M Y", strtotime($a['created_at'])) ?></p>
                             <?php $categories = explode(', ', $a['category_names']); ?>
                             <?php foreach ($categories as $category) : ?>
-                                <span class=" text-black text-xs font-medium mr-2 px-1 py-0.5 rounded-xl bg-zinc-400"><?= $category ?></span>
+                                <span class=" text-black text-xs font-medium mr-2 px-1 py-0.5 rounded-xl bg-white"><?= $category ?></span>
 
                             <?php endforeach ?>
                         </div>

@@ -26,30 +26,32 @@
     </div>
 </form>
 
-<div class="p-4 border-2 border border-white rounded-lg bg-neutral-950">
+<div class="p-4 rounded-lg bg-neutral-950">
     <div class="flex justify-between items-center mb-5 pb-3 border-b border-zinc-700">
         <div class="flex items-center ">
             <img src="/img/article.png" class="h-8 mr-1 sm:h-8" alt="instagram" />
-            <p class="italic text-base text-white">List Articles</p>
+            <p class="text-base text-white">List Articles</p>
         </div>
     </div>
     <div class="">
-        <?php $no = 1 + (25 * ($currentPage - 1)) ?>
+        <?php $no = 1 + (5 * ($currentPage - 1)) ?>
         <?php foreach ($article as $a) : ?>
-            <div class="bg-neutral-900 p-3 px-4 mb-3 rounded flex items-start sm:items-center">
-                <h1 class="text-3xl font-bold sm:text-3xl text-white mr-3"><?= $no++ ?></h1>
-                <a href="/admin/article/<?= $a['slug'] ?>" class="flex content-center items-center hover:underline hover:decoration-white">
-                    <img src="/img/file.png" class="h-14 mr-2 sm:h-14" alt="file" />
+            <div class="">
+                <a href="/articles/<?= $a['slug'] ?>" class="card flex hover:scale-105 transition-transform duration-300 bg-neutral-900 rounded-lg p-4 mb-7">
+                    <h1 class="text-3xl font-black sm:text-5xl text-zinc-700 mr-7 hover:text-yellow-500 transition-colors duration-300"><?= sprintf('%02d', $no++) ?></h1>
+                    <div class="flex content-center items-start sm:items-center hover:underline hover:decoration-white"></div>
                     <div class="">
-                        <h1 class="text-white text-base tracking-tighter leading-tight"><?= $a['title'] ?></h1>
-                        <p class="text-zinc-500 text-sm"><?= date("d M Y", strtotime($a['created_at'])) ?></p>
+                        <h2 class="text-white text-base tracking-tight leading-tight"><?= $a['title'] ?></h2>
+                        <p class="text-zinc-500 text-xs my-2"><?= date("d M Y", strtotime($a['created_at'])) ?></p>
+                        <?php $categories = explode(', ', $a['category_names']); ?>
+                        <?php foreach ($categories as $category) : ?>
+                            <span class=" text-black text-xs font-medium mr-2 px-1 py-0.5 rounded-xl bg-white"><?= $category ?></span>
+
+                        <?php endforeach ?>
                     </div>
                 </a>
             </div>
         <?php endforeach ?>
-        <div class="mt-5 flex justify-center">
-            <?= $pager->links('articles', 'custom_pagination') ?>
-        </div>
     </div>
 </div>
 <?= $this->endSection() ?>

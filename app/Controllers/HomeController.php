@@ -40,7 +40,6 @@ class HomeController extends BaseController
         $articleModel = new ArticleModel();
 
         $article = $articleModel->getAllArticle();
-        dd($article);
         $data = [
             'title' => 'Detail Article',
             'article' =>  $article,
@@ -54,7 +53,6 @@ class HomeController extends BaseController
     {
         $articleModel = new ArticleModel();
         $article = $articleModel->getArticleWithCategories($slug);
-        // dd($article);
         if ($article == true) {
             $title = $article[0]['title'];
         } else {
