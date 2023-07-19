@@ -39,6 +39,29 @@ class ArticleModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
+    public function getAllArticle()
+    {
+        $query = $this->db->query("
+        SELECT articles.id, articles.title, articles.content, articles.created_at, articles.slug,
+               (
+                   SELECT GROUP_CONCAT(categories.name SEPARATOR ', ') 
+                   FROM article_categories 
+                   JOIN categories ON categories.id = article_categories.category_id
+                   WHERE article_categories.article_id = articles.id
+               ) as category_names,
+               (
+                   SELECT GROUP_CONCAT(categories.color SEPARATOR ', ') 
+                   FROM article_categories 
+                   JOIN categories ON categories.id = article_categories.category_id
+                   WHERE article_categories.article_id = articles.id
+               ) as category_colors
+        FROM articles
+        ORDER BY articles.created_at DESC
+    ");
+
+        return $query->getResultArray();
+    }
+
     public function getArticle($slug = false)
     {
         if ($slug == false) {
@@ -51,12 +74,13 @@ class ArticleModel extends Model
     public function categories()
     {
         return $this->belongsToMany(CategoryModel::class, 'article_categories');
+        // return $this->belongsToMany(CategoryModel::class, 'article_categories', 'article_id', 'category_id');
     }
 
     public function getArticleWithCategories($slug)
     {
         $builder = $this->db->table('articles');
-        $builder->select('articles.*, categories.name');
+        $builder->select('articles.*, categories.name, categories.color');
         $builder->join('article_categories', 'article_categories.article_id = articles.id');
         $builder->join('categories', 'categories.id = article_categories.category_id');
         $builder->where('articles.slug', $slug);

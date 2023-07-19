@@ -88,6 +88,6 @@
     </div>
 <?php endforeach ?>
 <div class="mt-5 flex justify-center">
-    <?= $pager->links('categories', 'custom_pagination') ?>
+    <?= $pager->links() ?>
 </div>
 <?= $this->endSection() ?>

@@ -52,7 +52,7 @@ class ArticleController extends BaseController
         ];
         $validation = \Config\Services::validation();
         $validation->setRules([
-            'title' => 'required|min_length[10]|max_length[50]',
+            'title' => 'required|min_length[10]|max_length[250]',
             'share' => 'required',
             'status' => 'required',
             'categories' => 'required',
@@ -148,7 +148,7 @@ class ArticleController extends BaseController
     {
         $validation = \Config\Services::validation();
         $validation->setRules([
-            'title' => 'required|min_length[10]|max_length[50]',
+            'title' => 'required|min_length[10]|max_length[250]',
             'share' => 'required',
             'status' => 'required',
             'content' => 'required',
