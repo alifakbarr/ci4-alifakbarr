@@ -9,6 +9,7 @@ use App\Library\Globals;
 use App\Models\ArticleCategoryModel;
 use App\Models\CategoryModel;
 
+
 class HomeController extends BaseController
 {
     protected $articleModel;
@@ -22,6 +23,7 @@ class HomeController extends BaseController
 
     public function index()
     {
+        helper('url');
         $articleModel = new ArticleModel();
 
         $article = $articleModel->getAllArticle();

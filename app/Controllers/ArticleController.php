@@ -22,13 +22,17 @@ class ArticleController extends BaseController
 
     public function index()
     {
+        $uri = service('uri');
+
         // pagination
         $currentPage = $this->request->getVar('page_articles') ? $this->request->getVar('page_articles') : 1;
         $data = [
             'title' => 'Admin | Article Management',
             'article' => $this->articleModel->orderBy('created_at DESC')->paginate(25, 'articles'),
             'pager' => $this->articleModel->pager,
-            'currentPage' => $currentPage
+            'currentPage' => $currentPage,
+            // 'active' => ($uri->getSegment(1) == 'admin/article')
+
 
 
         ];

@@ -19,11 +19,12 @@ class UserController extends BaseController
 
     public function profile()
     {
-
+        $uri = service('uri');
         $data = [
             'title' => 'My Profile',
             'article' => $this->articleModel->orderBy('created_at DESC')->paginate(10, 'articles'),
             'pager' => $this->articleModel->pager,
+            // 'active' => ($uri->getSegment(1) == 'profile')
         ];
         return view('user/profile/profile', $data);
     }
