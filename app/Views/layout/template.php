@@ -35,7 +35,7 @@
 
         .card:hover {
             /* color: rgb(234 179 8); */
-            border-left: #fff 6px solid;
+            border-left: #fff 2px solid;
             /* border-right: #fff 2px solid;
             border-bottom: #fff 2px solid; */
         }
@@ -55,10 +55,10 @@
     </button>
 
     <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
-        <div class="h-full px-3 py-4 overflow-y-auto bg-neutral-900 shadow-2xl">
+        <div class="h-full px-3 py-4 overflow-y-auto bg-neutral-950 shadow-2xl">
             <a href="/" class="flex items-center pl-2.5 mb-5">
                 <img src="/img/notes2.png" class="h-6 mr-3 sm:h-7" alt="Flowbite Logo" />
-                <span class="self-center text-xl font-semibold whitespace-nowrap text-white italic">alifakbarr</span>
+                <span class="self-center text-xl whitespace-nowrap text-white">CreativityCove</span>
             </a>
             <ul class="space-y-2 font-medium">
                 <?php if (in_groups('admin') || in_groups('user')) : ?>
@@ -137,7 +137,7 @@
     <div class="p-4 sm:ml-64">
         <?= $this->renderSection('content') ?>
         <div class="p-4 border-2 bg-white border border-white rounded-lg mt-5">
-            <h1 class="text-left font-semibold text-sm">&copy 2023 | Alif Akbar Irdhobilla</h1>
+            <h1 class="text-left font-base text-sm">&copy 2023 | Alif Akbar Irdhobilla</h1>
         </div>
     </div>
 

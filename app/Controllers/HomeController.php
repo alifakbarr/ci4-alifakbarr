@@ -41,7 +41,7 @@ class HomeController extends BaseController
 
         $article = $articleModel->getAllArticle();
         $data = [
-            'title' => 'Detail Article',
+            'title' => 'List Article',
             'article' =>  $article,
             'pager' => $this->articleModel->pager,
             'currentPage' => $currentPage
