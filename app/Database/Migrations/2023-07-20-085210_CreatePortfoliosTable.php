@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreateArticlesTable extends Migration
+class CreatePortfoliosTable extends Migration
 {
     public function up()
     {
@@ -19,19 +19,23 @@ class CreateArticlesTable extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'share' => [
+            'description' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
+            'role' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'status' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
+            'start_at' => [
+                'type' => 'date',
+                'null' => true,
             ],
-            'slug' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
+            'finish_at' => [
+                'type' => 'date',
+                'null' => true,
             ],
-            'content' => [
+            'link' => [
                 'type' => 'TEXT',
                 'null' => true,
             ],
@@ -40,12 +44,11 @@ class CreateArticlesTable extends Migration
 
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->addUniqueKey('slug');
-        $this->forge->createTable('articles');
+        $this->forge->createTable('portfolios');
     }
 
     public function down()
     {
-        $this->forge->dropTable('articles');
+        //
     }
 }

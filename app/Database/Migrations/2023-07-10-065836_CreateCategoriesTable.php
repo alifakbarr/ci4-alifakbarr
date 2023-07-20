@@ -19,6 +19,10 @@ class CreateCategoriesTable extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
+            'color' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
             'created_at DATETIME DEFAULT CURRENT_TIMESTAMP',
             'updated_at DATETIME DEFAULT CURRENT_TIMESTAMP on update current_timestamp',
 
