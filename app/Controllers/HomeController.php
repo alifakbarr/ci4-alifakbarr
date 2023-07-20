@@ -73,6 +73,11 @@ class HomeController extends BaseController
         return view('home/detailArticle', $data);
     }
 
+    public function portfolio()
+    {
+        $data = ['title' => 'Portfolio'];
+        return view('home/Portfolio', $data);
+    }
     public function aboutMe()
     {
         $data = ['title' => 'About Me'];
