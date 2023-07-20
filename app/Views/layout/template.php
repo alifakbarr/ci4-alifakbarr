@@ -35,7 +35,7 @@
 
         .card:hover {
             /* color: rgb(234 179 8); */
-            border-left: #fff 6px solid;
+            border-left: #fff 2px solid;
             /* border-right: #fff 2px solid;
             border-bottom: #fff 2px solid; */
         }
@@ -43,11 +43,29 @@
         * {
             font-family: 'PT Sans', sans-serif;
         }
+
+        /* Gaya Scroll Bar Minimalis */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #fff;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
     </style>
 </head>
 
 <body class="bg-black">
-    <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+    <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200">
         <span class="sr-only">Open sidebar</span>
         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
@@ -55,45 +73,46 @@
     </button>
 
     <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
-        <div class="h-full px-3 py-4 overflow-y-auto bg-neutral-900 shadow-2xl">
+        <div class="h-full px-3 py-4 overflow-y-auto bg-neutral-950 shadow-2xl">
             <a href="/" class="flex items-center pl-2.5 mb-5">
-                <img src="/img/notes2.png" class="h-6 mr-3 sm:h-7" alt="Flowbite Logo" />
-                <span class="self-center text-xl font-semibold whitespace-nowrap text-white italic">alifakbarr</span>
+                <img src="/img/creative.png" class="h-6 mr-3 sm:h-7" alt=" Logo" />
+                <span class="self-center text-xl whitespace-nowrap text-white">CreativityCove</span>
             </a>
             <ul class="space-y-2 font-medium">
+                <?php $currentURL = base_url(uri_string()); ?>
                 <?php if (in_groups('admin') || in_groups('user')) : ?>
                     <hr class="mx-2">
                     <li>
-                        <a href="/profile" class=" flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                            <img src="/img/user.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
+                        <a href="/profile" class="<?= $currentURL == base_url('/profile') ? 'bg-white text-black' : 'text-white hover:bg-zinc-50 hover:text-black' ?> flex items-center p-2 rounded-lg">
+                            <img src="<?= $currentURL == base_url('/profile') ? '/img/person2.png' : '/img/person.png' ?>" class=" h-6 mr-3" alt="Flowbite Logo" />
                             <span class="flex-1 ml-3 whitespace-nowrap">My Profile</span>
                         </a>
                     </li>
                 <?php endif; ?>
                 <?php if (in_groups('admin')) : ?>
                     <li>
-                        <a href="/admin/userManagement" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                            <img src="/img/group.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
+                        <a href="/admin/userManagement" class="<?= $currentURL == base_url('/admin/userManagement') ? 'bg-white text-black' : 'text-white hover:bg-zinc-50 hover:text-black' ?> flex items-center p-2 rounded-lg">
+                            <img src="<?= $currentURL == base_url(' /admin/userManagement') ? '/img/group2.png' : '/img/group.png' ?>" class=" h-6 mr-3" alt="Flowbite Logo" />
                             <span class="flex-1 ml-3 whitespace-nowrap">User Management</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/admin/article" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                            <img src="/img/newspaper.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
+                        <a href="/admin/article" class="<?= $currentURL == base_url('/admin/article') ? 'bg-white text-black' : 'text-white hover:bg-zinc-50 hover:text-black' ?> flex items-center p-2 rounded-lg">
+                            <img src="<?= $currentURL == base_url('/admin/article') ? '/img/copywriting2.png' : '/img/copywriting.png' ?>" class=" h-6 mr-3" alt="Flowbite Logo" />
                             <span class="flex-1 ml-3 whitespace-nowrap">Article Management</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/admin/category" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                            <img src="/img/application.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
+                        <a href="/admin/category" class="<?= $currentURL == base_url('/admin/category') ? 'bg-white text-black' : 'text-white hover:bg-zinc-50 hover:text-black' ?> flex items-center p-2 rounded-lg">
+                            <img src="<?= $currentURL == base_url('/admin/category') ? '/img/menu2.png' : '/img/menu.png' ?>" class=" h-6 mr-3" alt="Flowbite Logo" />
                             <span class="flex-1 ml-3 whitespace-nowrap">Category Management</span>
                         </a>
                     </li>
                 <?php endif; ?>
                 <?php if (logged_in() == true) : ?>
                     <li>
-                        <a href="<?= base_url('logout') ?>" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                            <img src="/img/logout.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
+                        <a href="<?= base_url('logout') ?>" class="<?= $currentURL == base_url('logout') ? 'bg-white text-black' : 'text-white hover:bg-zinc-50 hover:text-black' ?> flex items-center p-2 rounded-lg">
+                            <img src="<?= $currentURL == base_url('logout') ? '/img/log-out2.png' : '/img/log-out.png' ?>" class=" h-6 mr-3" alt="Flowbite Logo" />
                             <span class="flex-1 ml-3 whitespace-nowrap">Sign Out</span>
                         </a>
                     <li>
@@ -102,31 +121,31 @@
                     <?php if (logged_in() == false) : ?>
                     <li>
                         <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="w-full text-left flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                            <img src="/img/user.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
+                            <img src="/img/person.png" class=" h-6 mr-3" alt="Flowbite Logo" />
                             <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
                         </button>
                     <li>
                     <?php endif ?>
                     <li>
-                        <a href="/" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                            <img src="/img/home.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
+                        <a href="/" class="<?= $currentURL == base_url() || $currentURL == base_url('/') ? 'bg-white text-black' : 'text-white hover:bg-zinc-50 hover:text-black' ?> flex items-center p-2 rounded-lg ">
+                            <img src="<?= $currentURL == base_url() || $currentURL == base_url('/') ? '/img/homepage2.png' : '/img/homepage.png' ?>" class="h-6 mr-3" alt="Flowbite Logo" />
                             <span class="flex-1 ml-3 whitespace-nowrap">Home</span>
                         </a>
                     <li>
                     <li>
-                        <a href="/articles" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                            <img src="/img/newspaper.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
+                        <a href="/articles" class="<?= $currentURL == base_url('/articles') ? 'bg-white text-black' : 'text-white hover:bg-zinc-50 hover:text-black' ?>  flex items-center p-2 rounded-lg">
+                            <img src="<?= $currentURL == base_url('/articles') ? '/img/newspaper2.png' : '/img/newspaper.png' ?>" class=" h-6 mr-3" alt="Flowbite Logo" />
                             <span class="flex-1 ml-3 whitespace-nowrap">Articles</span>
                             <!-- <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-white bg-black rounded-full"></span> -->
                         </a>
                     <li>
-                        <a href="/admin" class="flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                            <img src="/img/archive.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
-                            <span class="flex-1 ml-3 whitespace-nowrap">Portofolio</span>
+                        <a href="/portfolio" class="<?= $currentURL == base_url('/portfolio') ? 'bg-white text-black' : 'text-white hover:bg-zinc-50 hover:text-black' ?> flex items-center p-2 rounded-lg">
+                            <img src="<?= $currentURL == base_url('/portfolio') ? '/img/archive2.png' : '/img/archive.png' ?>" class=" h-6 mr-3" alt="Flowbite Logo" />
+                            <span class="flex-1 ml-3 whitespace-nowrap">Portfolio</span>
                         </a>
                     <li>
-                        <a href="/admin" class="mb-5 flex items-center p-2 rounded-lg text-white hover:bg-zinc-50 hover:text-black">
-                            <img src="/img/information.png" class="w-6 h-6 mr-3" alt="Flowbite Logo" />
+                        <a href="/aboutMe" class="<?= $currentURL == base_url('/aboutMe') ? 'bg-white text-black' : 'text-white hover:bg-zinc-50 hover:text-black' ?> flex items-center p-2 rounded-lg">
+                            <img src="<?= $currentURL == base_url('/aboutMe') ? '/img/interface2.png' : '/img/interface.png' ?>" class=" h-6 mr-3" alt="Flowbite Logo" />
                             <span class="flex-1 ml-3 whitespace-nowrap">About Me</span>
                         </a>
                     </li>
@@ -137,7 +156,7 @@
     <div class="p-4 sm:ml-64">
         <?= $this->renderSection('content') ?>
         <div class="p-4 border-2 bg-white border border-white rounded-lg mt-5">
-            <h1 class="text-left font-semibold text-sm">&copy 2023 | Alif Akbar Irdhobilla</h1>
+            <h1 class="text-left font-base text-sm">&copy 2023 | Alif Akbar Irdhobilla</h1>
         </div>
     </div>
 
@@ -154,14 +173,14 @@
                 </button>
                 <div class="px-6 py-6 lg:px-8">
                     <a href="/" class="flex items-center mb-5">
-                        <img src="/img/notes.png" class="h-6 mr-1 sm:h-7" alt="Flowbite Logo" />
-                        <span class="self-center text-2xl font-semibold whitespace-nowrap text-black italic">alifakbarr / Sign In</span>
+                        <img src="/img/creative2.png" class="h-6 mr-1 sm:h-7" alt="Flowbite Logo" />
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap text-black tracking-tight">CreativityCove / Sign In</span>
                     </a>
                     <div class="flex items-center content-center mt-8">
                         <p class="mb-4 text-lg font-bold text-black leading-tight ">Hey, hello</p>
                         <img src="/img/hand.png" class="h-6 mr-1 sm:h-7 -mt-5" alt="">
                     </div>
-                    <p class="-mt-2 hover:underline">Welcome to alifakbarr.</p>
+                    <p class="-mt-2 hover:underline">Welcome to CreativityCove.</p>
                     <?= view('Myth\Auth\Views\_message_block') ?>
 
                     <form class="space-y-6 mt-5" action="<?= url_to('login') ?>" method="post">
@@ -180,9 +199,9 @@
                             </div>
                         </div>
                         <button type="submit" class="w-full text-white bg-black hover:bg-black focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Login to your account</button>
-                        <div class="text-sm font-medium text-zinc-500">
+                        <!-- <div class="text-sm font-medium text-zinc-500">
                             Not registered? <a href="<?= url_to('register') ?>" class="text-black hover:underline">Create account</a>
-                        </div>
+                        </div> -->
                     </form>
                 </div>
             </div>

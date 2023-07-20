@@ -9,6 +9,7 @@ use App\Library\Globals;
 use App\Models\ArticleCategoryModel;
 use App\Models\CategoryModel;
 
+
 class HomeController extends BaseController
 {
     protected $articleModel;
@@ -22,6 +23,7 @@ class HomeController extends BaseController
 
     public function index()
     {
+        helper('url');
         $articleModel = new ArticleModel();
 
         $article = $articleModel->getAllArticle();
@@ -41,7 +43,7 @@ class HomeController extends BaseController
 
         $article = $articleModel->getAllArticle();
         $data = [
-            'title' => 'Detail Article',
+            'title' => 'List Article',
             'article' =>  $article,
             'pager' => $this->articleModel->pager,
             'currentPage' => $currentPage
@@ -71,6 +73,16 @@ class HomeController extends BaseController
         return view('home/detailArticle', $data);
     }
 
+    public function portfolio()
+    {
+        $data = ['title' => 'Portfolio'];
+        return view('home/Portfolio', $data);
+    }
+    public function aboutMe()
+    {
+        $data = ['title' => 'About Me'];
+        return view('home/aboutMe', $data);
+    }
     public function signIn()
     {
         return view('auth/signIn');

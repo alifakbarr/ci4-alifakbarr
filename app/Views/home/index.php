@@ -1,26 +1,10 @@
 <?= $this->extend('/layout/template') ?>
 <?= $this->section('content') ?>
-<div class="w-full  mb-6 text-center bg-white border-y border-y-4 rounded-lg shadow py-9 bg-yellow-400">
-    <div class="flex justify-center items-center">
-        <img src="/img/notes.png" class="h-12 mr-1" alt="instagram" />
-        <p class="mb-1 text-5xl font-bold text-black italic tracking-tighter">
-            alifakbarr
-        </p>
-    </div>
-    <div class="flex justify-center items-center mt-7 bg-white py-1">
-        <a href="https://www.instagram.com/alifakbar_8/" class="flex items-center mx-4" target="_blank">
-            <img src="/img/instagram.png" class="h-4 mr-1 sm:h-4" alt="instagram" />
-            <p class="mb-1 italic text-base text-black sm:text-base">alifakbar_8</p>
-        </a>
-        <a href="https://github.com/alifakbarr" class="flex items-center mx-4" target="_blank">
-            <img src="/img/github.png" class="h-4 mr-1 sm:h-4" alt="github" />
-            <p class="mb-1 italic text-base text-black sm:text-base">alifakbarr</p>
-        </a>
-        <a href="https://www.linkedin.com/in/alifakbari/" class="flex items-center mx-4" target="_blank">
-            <img src="/img/linkedin.png" class="h-4 mr-1 sm:h-4" alt="linkedin" />
-            <p class="mb-1 italic text-base text-black sm:text-base">Alif Akbar I</p>
-        </a>
-    </div>
+<div class="my-16 mx-8">
+    <p class="text-xl sm:text-2xl w-full tracking-tighter shadow-lg leading-tight font-normal text-white pb-6">made by alifakbarr</p>
+    <p class="text-4xl sm:text-5xl w-full tracking-tight shadow-lg leading-tight font-normal text-white pb-3">CreativityCove</p>
+    <p class="text-base sm:text-sm w-full tracking-tighter shadow-lg leading-tight font-normal text-white pb-3">Enjoy exploring, creating, and imagining,
+        CreativityCove, where limitless creative energy is everything.</p>
 </div>
 
 <form class="my-6" action="" method="post">
@@ -32,12 +16,12 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
         </div>
-        <input type="search" name="keyword" id="default-search" class="block w-full p-4 pl-10 text-sm text-black rounded-lg bg-white focus:ring-teal-400 focus:border-teal-400" placeholder="Search articles" required>
-        <button type="submit" name="submit" class="text-black absolute right-2.5 bottom-2.5 bg-emerald-400 hover:bg-emerald-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">Search</button>
+        <input type="search" name="keyword" id="default-search" class="block w-full p-4  pl-10 text-sm text-black rounded-lg bg-white" placeholder="Search articles" required>
+        <button type="submit" name="submit" class="text-white absolute right-2.5 bottom-2.5 bg-black font-medium rounded-lg text-sm px-4 py-2">Search</button>
     </div>
 </form>
 
-<div class="p-4 rounded-lg bg-neutral-950">
+<div class="p-4 rounded-lg">
     <div class="flex justify-between items-center mb-5 pb-3 border-b border-zinc-700">
         <div class="flex items-center ">
             <img src="/img/article.png" class="h-8 mr-1 sm:h-8" alt="instagram" />
@@ -53,7 +37,7 @@
         <div class=" pt-3 mb-3 rounded">
             <?php foreach ($article as $a) : ?>
                 <div class="">
-                    <a href="/articles/<?= $a['slug'] ?>" class="card flex hover:scale-105 transition-transform duration-300 bg-neutral-900 rounded-lg p-4 mb-7">
+                    <a href="/articles/<?= $a['slug'] ?>" class="card flex hover:scale-105 transition-transform duration-300 bg-neutral-950 rounded-lg p-4 mb-7">
                         <h1 class="text-3xl font-black sm:text-5xl text-zinc-700 mr-7 hover:text-yellow-500 transition-colors duration-300"><?= sprintf('%02d', $no++) ?></h1>
                         <div class="flex content-center items-start sm:items-center hover:underline hover:decoration-white"></div>
                         <div class="">
