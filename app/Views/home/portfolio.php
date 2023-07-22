@@ -63,8 +63,8 @@
                         </svg>
                     </span>
                     <h3 class="flex items-center mb-1 text-lg font-semibold text-white">Bootcamp Cyber Security Universitas Muhammadiyah Sidoarjo <span class="bg-white text-black text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3">Project</span></h3>
-                    <time class="block mb-2 text-sm font-normal leading-none text-gray-500">Released on January 13th, 2022</time>
-                    <p class="mb-4 text-base font-normal text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
+                    <time class="block mb-2 text-sm font-normal leading-none text-neutral-500">Released on January 13th, 2022</time>
+                    <p class="mb-4 text-base font-normal text-neutral-300">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
                 </li>
                 <li class="mb-10 ml-6">
                     <span class="absolute flex items-center justify-center w-6 h-6 bg-neutral-900 rounded-full -left-3 ring-8 ring-neutral-200">
@@ -73,8 +73,8 @@
                         </svg>
                     </span>
                     <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">Bootcamp Cyber Security Universitas Muhammadiyah Sidoarjo <span class="bg-white text-black text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3">Participant</span></h3>
-                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Released on January 13th, 2022</time>
-                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
+                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-neutral-500">Released on January 13th, 2022</time>
+                    <p class="mb-4 text-base font-normal text-neutral-300">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
                 </li>
                 <li class="mb-10 ml-6">
                     <span class="absolute flex items-center justify-center w-6 h-6 bg-neutral-900 rounded-full -left-3 ring-8 ring-neutral-200">
@@ -83,8 +83,8 @@
                         </svg>
                     </span>
                     <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">Bootcamp Cyber Security Universitas Muhammadiyah Sidoarjo <span class="bg-white text-black text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3">Internship</span></h3>
-                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Released on January 13th, 2022</time>
-                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
+                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-neutral-500">Released on January 13th, 2022</time>
+                    <p class="mb-4 text-base font-normal text-neutral-300">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
                 </li>
                 <li class="mb-10 ml-6">
                     <span class="absolute flex items-center justify-center w-6 h-6 bg-neutral-900 rounded-full -left-3 ring-8 ring-neutral-200">
@@ -93,8 +93,8 @@
                         </svg>
                     </span>
                     <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">Bootcamp Cyber Security Universitas Muhammadiyah Sidoarjo <span class="bg-white text-black text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3">Employee</span></h3>
-                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Released on January 13th, 2022</time>
-                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
+                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-neutral-500">Released on January 13th, 2022</time>
+                    <p class="mb-4 text-base font-normal text-neutral-300">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
                 </li>
                 <li class="mb-10 ml-6">
                     <span class="absolute flex items-center justify-center w-6 h-6 bg-neutral-900 rounded-full -left-3 ring-8 ring-neutral-200">
@@ -103,8 +103,8 @@
                         </svg>
                     </span>
                     <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">Bootcamp Cyber Security Universitas Muhammadiyah Sidoarjo <span class="bg-white text-black text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3">Employee</span></h3>
-                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Released on January 13th, 2022</time>
-                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
+                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-neutral-500">Released on January 13th, 2022</time>
+                    <p class="mb-4 text-base font-normal text-neutral-300">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
                 </li>
             </ol>
         </div>

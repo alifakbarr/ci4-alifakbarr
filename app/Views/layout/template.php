@@ -23,6 +23,7 @@
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> -->
     <!-- flowbite css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/datepicker.min.js"></script>
     <!-- select2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
     <title><?= $title ?></title>
@@ -108,6 +109,12 @@
                             <span class="flex-1 ml-3 whitespace-nowrap">Category Management</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="/admin/portfolio" class="<?= $currentURL == base_url('/admin/portfolio') ? 'bg-white text-black' : 'text-white hover:bg-zinc-50 hover:text-black' ?> flex items-center p-2 rounded-lg">
+                            <img src="<?= $currentURL == base_url('/admin/portfolio') ? '/img/archive2.png' : '/img/archive.png' ?>" class=" h-6 mr-3" alt="Flowbite Logo" />
+                            <span class="flex-1 ml-3 whitespace-nowrap">Portfolio Management</span>
+                        </a>
+                    </li>
                 <?php endif; ?>
                 <?php if (logged_in() == true) : ?>
                     <li>
@@ -140,7 +147,7 @@
                         </a>
                     <li>
                         <a href="/portfolio" class="<?= $currentURL == base_url('/portfolio') ? 'bg-white text-black' : 'text-white hover:bg-zinc-50 hover:text-black' ?> flex items-center p-2 rounded-lg">
-                            <img src="<?= $currentURL == base_url('/portfolio') ? '/img/archive2.png' : '/img/archive.png' ?>" class=" h-6 mr-3" alt="Flowbite Logo" />
+                            <img src="<?= $currentURL == base_url('/portfolio') ? '/img/portfolio2.png' : '/img/portfolio.png' ?>" class=" h-6 mr-3" alt="Flowbite Logo" />
                             <span class="flex-1 ml-3 whitespace-nowrap">Portfolio</span>
                         </a>
                     <li>
