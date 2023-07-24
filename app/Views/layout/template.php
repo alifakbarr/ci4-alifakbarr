@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -38,7 +39,7 @@
             /* color: rgb(234 179 8); */
             border-left: #fff 2px solid;
             /* border-right: #fff 2px solid;
-            border-bottom: #fff 2px solid; */
+        border-bottom: #fff 2px solid; */
         }
 
         * {
@@ -61,6 +62,21 @@
 
         ::-webkit-scrollbar-track {
             background-color: transparent;
+        }
+
+        #portfolio ul {
+            list-style-type: disc !important;
+            list-style-position: inside !important;
+        }
+
+        #artikel ul {
+            list-style-type: disc !important;
+            list-style-position: inside !important;
+        }
+
+        #artikel ol {
+            list-style-type: decimal !important;
+            list-style-position: inside !important;
         }
     </style>
 </head>

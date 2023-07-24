@@ -60,7 +60,7 @@
             </tr>
             <tr>
                 <th scope="row" class="px-6 py-4 font-medium text-white whitespace-wrap">
-                    <?= ucwords($portfolio['description']) ?>
+                    <?= $portfolio['description'] ?>
                 </th>
             </tr>
         </table>

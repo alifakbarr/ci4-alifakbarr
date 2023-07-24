@@ -25,7 +25,10 @@
     </table>
     <!-- <hr class="my-3 border-2 rounded-lg"> -->
     <div class="rounded-lg pb-4 text-neutral-100 font-light text-base leading-normal ">
-        <?= $article[0]['content'] ?>
+        <div id="artikel">
+            <?= $article[0]['content'] ?>
+        </div>
+
     </div>
 
 
