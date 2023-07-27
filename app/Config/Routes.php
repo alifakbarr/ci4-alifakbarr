@@ -64,6 +64,14 @@ $routes->group('admin', ['filter' => 'role:admin'], function ($routes) {
     $routes->get('category/edit/(:segment)', 'CategoryController::edit/$1');
     $routes->post('category/update/(:any)', 'CategoryController::update/$1');
     $routes->delete('category/(:num)', 'CategoryController::destroy/$1');
+    // portfolio Management
+    $routes->get('portfolio/', 'PortfolioController::index');
+    $routes->get('portfolio/create', 'PortfolioController::create');
+    $routes->post('portfolio/save', 'PortfolioController::save');
+    $routes->get('portfolio/detail/(:any)', 'PortfolioController::detail/$1');
+    $routes->get('portfolio/edit/(:any)', 'PortfolioController::edit/$1');
+    $routes->post('portfolio/update/(:any)', 'PortfolioController::update/$1');
+    $routes->delete('portfolio/(:num)', 'PortfolioController::destroy/$1');
 });
 
 // home

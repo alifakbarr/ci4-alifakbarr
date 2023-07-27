@@ -8,7 +8,7 @@ use App\Models\HomeModel;
 use App\Library\Globals;
 use App\Models\ArticleCategoryModel;
 use App\Models\CategoryModel;
-
+use App\Models\PortfolioModel;
 
 class HomeController extends BaseController
 {
@@ -75,7 +75,12 @@ class HomeController extends BaseController
 
     public function portfolio()
     {
-        $data = ['title' => 'Portfolio'];
+        $portfolioModel = new PortfolioModel();
+        $portfolio = $portfolioModel->orderBy('start_at', 'DESC')->findAll();
+        $data = [
+            'title' => 'Portfolio',
+            'portfolio' => $portfolio
+        ];
         return view('home/Portfolio', $data);
     }
     public function aboutMe()

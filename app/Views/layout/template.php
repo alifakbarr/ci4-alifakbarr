@@ -6,15 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         // bgCard: '#17191a'
-                    }
+                    },
+
                 }
-            }
+            },
+            plugins: [
+                require('@tailwindcss/typography'),
+                // ...
+            ],
         }
     </script>
     <!-- ckeditor -->
@@ -23,9 +29,12 @@
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> -->
     <!-- flowbite css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/datepicker.min.js"></script>
     <!-- select2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
     <title><?= $title ?></title>
+    <!-- From UNPKG -->
+    <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.4.x/dist/typography.min.css" />
 
     <style>
         .card:hover h1 {
@@ -37,7 +46,7 @@
             /* color: rgb(234 179 8); */
             border-left: #fff 2px solid;
             /* border-right: #fff 2px solid;
-            border-bottom: #fff 2px solid; */
+        border-bottom: #fff 2px solid; */
         }
 
         * {
@@ -61,6 +70,21 @@
         ::-webkit-scrollbar-track {
             background-color: transparent;
         }
+
+        /* #portfolio ul {
+            list-style-type: disc !important;
+            list-style-position: inside !important;
+        } */
+
+        /* #artikel ul {
+            list-style-type: disc !important;
+            list-style-position: inside !important;
+        }
+
+        #artikel ol {
+            list-style-type: decimal !important;
+            list-style-position: inside !important;
+        } */
     </style>
 </head>
 
@@ -75,7 +99,7 @@
     <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto bg-neutral-950 shadow-2xl">
             <a href="/" class="flex items-center pl-2.5 mb-5">
-                <img src="/img/creative.png" class="h-6 mr-3 sm:h-7" alt=" Logo" />
+                <img src="/img/bookmark2.png" class="h-6 mr-3 sm:h-7" alt=" Logo" />
                 <span class="self-center text-xl whitespace-nowrap text-white">CreativityCove</span>
             </a>
             <ul class="space-y-2 font-medium">
@@ -106,6 +130,12 @@
                         <a href="/admin/category" class="<?= $currentURL == base_url('/admin/category') ? 'bg-white text-black' : 'text-white hover:bg-zinc-50 hover:text-black' ?> flex items-center p-2 rounded-lg">
                             <img src="<?= $currentURL == base_url('/admin/category') ? '/img/menu2.png' : '/img/menu.png' ?>" class=" h-6 mr-3" alt="Flowbite Logo" />
                             <span class="flex-1 ml-3 whitespace-nowrap">Category Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/admin/portfolio" class="<?= $currentURL == base_url('/admin/portfolio') ? 'bg-white text-black' : 'text-white hover:bg-zinc-50 hover:text-black' ?> flex items-center p-2 rounded-lg">
+                            <img src="<?= $currentURL == base_url('/admin/portfolio') ? '/img/archive2.png' : '/img/archive.png' ?>" class=" h-6 mr-3" alt="Flowbite Logo" />
+                            <span class="flex-1 ml-3 whitespace-nowrap">Portfolio Management</span>
                         </a>
                     </li>
                 <?php endif; ?>
@@ -140,7 +170,7 @@
                         </a>
                     <li>
                         <a href="/portfolio" class="<?= $currentURL == base_url('/portfolio') ? 'bg-white text-black' : 'text-white hover:bg-zinc-50 hover:text-black' ?> flex items-center p-2 rounded-lg">
-                            <img src="<?= $currentURL == base_url('/portfolio') ? '/img/archive2.png' : '/img/archive.png' ?>" class=" h-6 mr-3" alt="Flowbite Logo" />
+                            <img src="<?= $currentURL == base_url('/portfolio') ? '/img/portfolio2.png' : '/img/portfolio.png' ?>" class=" h-6 mr-3" alt="Flowbite Logo" />
                             <span class="flex-1 ml-3 whitespace-nowrap">Portfolio</span>
                         </a>
                     <li>
@@ -173,7 +203,7 @@
                 </button>
                 <div class="px-6 py-6 lg:px-8">
                     <a href="/" class="flex items-center mb-5">
-                        <img src="/img/creative2.png" class="h-6 mr-1 sm:h-7" alt="Flowbite Logo" />
+                        <img src="/img/bookmark.png" class="h-6 mr-1 sm:h-7" alt="Flowbite Logo" />
                         <span class="self-center text-2xl font-semibold whitespace-nowrap text-black tracking-tight">CreativityCove / Sign In</span>
                     </a>
                     <div class="flex items-center content-center mt-8">
@@ -210,6 +240,7 @@
 
     <!-- flowbite js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+
     <!-- select2 -->
     <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
     <!-- ck editor -->

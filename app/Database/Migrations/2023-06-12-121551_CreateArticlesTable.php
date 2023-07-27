@@ -19,6 +19,18 @@ class CreateArticlesTable extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
+            'share' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'status' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'slug' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
             'content' => [
                 'type' => 'TEXT',
                 'null' => true,
@@ -28,6 +40,7 @@ class CreateArticlesTable extends Migration
 
         ]);
         $this->forge->addKey('id', true);
+        $this->forge->addUniqueKey('slug');
         $this->forge->createTable('articles');
     }
 

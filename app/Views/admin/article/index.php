@@ -27,7 +27,7 @@
             </thead>
             <tbody>
                 <!-- perhitungan pagination -->
-                <?php $no = 1 + (2 * ($currentPage - 1)) ?>
+                <?php $no = 1 + (25 * ($currentPage - 1)) ?>
                 <?php foreach ($article as $a) : ?>
                     <tr class="border-b bg-black">
                         <th scope="row" class="px-6 py-4 font-medium text-white whitespace-wrap">
