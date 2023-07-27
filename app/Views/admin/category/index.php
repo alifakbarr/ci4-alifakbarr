@@ -57,6 +57,9 @@
             </tbody>
         </table>
     </div>
+    <div class="mt-5 flex justify-center">
+        <?= $pager->links('categories', 'custom_pagination') ?>
+    </div>
 </div>
 
 <?php foreach ($category as $a) : ?>
