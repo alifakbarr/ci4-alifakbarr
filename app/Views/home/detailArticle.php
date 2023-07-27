@@ -1,8 +1,8 @@
 <?= $this->extend('/layout/template') ?>
 <?= $this->section('content') ?>
-<div class="rounded-lg pt-8 pb-24 px-9">
+<div class="rounded-lg pt-8 pb-5">
     <p class="text-lg sm:text-2xl w-full tracking-tighter shadow-lg leading-tight font-normal text-white pb-3">CreativityCove</p>
-    <hr class="border border-white rounded-lg mb-24 w-full">
+    <hr class="border border-white rounded-lg mb-8 w-full">
     <p class="text-2xl sm:text-3xl w-full tracking-tighter shadow-lg leading-tight font-bold text-white"><?= $article[0]['title'] ?></p>
     <table class="my-9 text-white text-sm font-light ">
         <tr>
@@ -24,8 +24,8 @@
         </tr>
     </table>
     <!-- <hr class="my-3 border-2 rounded-lg"> -->
-    <div class="rounded-lg pb-4 text-neutral-100 font-light text-base leading-normal ">
-        <div id="artikel">
+    <div class="rounded-lg font-light bg-gray-100 p-5 sm:p-20">
+        <div class="prose max-w-none pb-10 text-base">
             <?= $article[0]['content'] ?>
         </div>
 

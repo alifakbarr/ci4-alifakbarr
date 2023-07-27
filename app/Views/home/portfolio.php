@@ -31,31 +31,31 @@
             <!-- <hr class="border border-white rounded-lg w-full"> -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-3">
                 <a href="#" target="_blank">
-                    <div class="bg-white rounded-lg py-3 px-2 sm:px-4 ">
+                    <div class="bg-white rounded-lg py-3 px-2 sm:px-4 hover:bg-neutral-200">
                         <p class="text-neutral-700 text-xs">Personal Site</p>
                         <p class="text-sm sm:text-base">CreativyCove</p>
                     </div>
                 </a>
                 <a href="mailto:alifakbar8800@gmail.com" target="_blank">
-                    <div class="bg-white rounded-lg py-3 px-2 sm:px-4 ">
+                    <div class="bg-white rounded-lg py-3 px-2 sm:px-4 hover:bg-neutral-200">
                         <p class="text-neutral-700 text-xs">Personal Email</p>
                         <p class="text-sm sm:text-base">alifakbar8800@gmail.com</p>
                     </div>
                 </a>
                 <a href="https://github.com/alifakbarr" target="_blank">
-                    <div class="bg-white rounded-lg py-3 px-2 sm:px-4 ">
+                    <div class="bg-white rounded-lg py-3 px-2 sm:px-4 hover:bg-neutral-200">
                         <p class="text-neutral-700 text-xs">Github Username</p>
                         <p class="text-sm sm:text-base">alifakbarr</p>
                     </div>
                 </a>
                 <a href="https://www.linkedin.com/in/alifakbari/" target="_blank">
-                    <div class="bg-white rounded-lg py-3 px-2 sm:px-4 ">
+                    <div class="bg-white rounded-lg py-3 px-2 sm:px-4 hover:bg-neutral-200">
                         <p class="text-neutral-700 text-xs">Linkedin Username</p>
                         <p class=" text-sm sm:text-base">alifakbari</p>
                     </div>
                 </a>
                 <a href="https://www.instagram.com/alifakbar_8/" target="_blank">
-                    <div class="bg-white rounded-lg py-3 px-2 sm:px-4 ">
+                    <div class="bg-white rounded-lg py-3 px-2 sm:px-4 hover:bg-neutral-200">
                         <p class="text-neutral-700 text-xs">Instagram Username</p>
                         <p class="text-sm sm:text-base" target="_blank">alifakbar_8</p>
                     </div>
@@ -81,11 +81,11 @@
                         <?php if ($p['finish_at'] !== '') : ?>
                             <time class="block mb-2 text-sm font-normal leading-none text-neutral-500">Start on <?= date("M Y", strtotime($p['start_at'])) ?> & Finish at <?= date("M Y", strtotime($p['finish_at'])) ?> </time>
                         <?php endif ?>
-                        <div class="text-white mb-2">
-                            <?= $p['description'] ?>
+                        <div class="mb-2">
+                            <article class="prose text-white"><?= $p['description'] ?></article>
                         </div>
                         <?php if ($p['link'] !== '') : ?>
-                            <a href="<?= $p['link'] ?>" target="_blank" class=" text-black text-xs font-medium px-2 py-1 rounded-xl bg-white">Check Me!</a>
+                            <a href="<?= $p['link'] ?>" target="_blank" class=" text-black text-xs font-medium px-2 py-1 rounded-xl bg-white hover:bg-neutral-200">Check Me!</a>
                         <?php else : ?>
                             <div></div>
                         <?php endif ?>

@@ -13,9 +13,14 @@
                 extend: {
                     colors: {
                         // bgCard: '#17191a'
-                    }
+                    },
+
                 }
-            }
+            },
+            plugins: [
+                require('@tailwindcss/typography'),
+                // ...
+            ],
         }
     </script>
     <!-- ckeditor -->
@@ -28,6 +33,8 @@
     <!-- select2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
     <title><?= $title ?></title>
+    <!-- From UNPKG -->
+    <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.4.x/dist/typography.min.css" />
 
     <style>
         .card:hover h1 {
@@ -64,12 +71,12 @@
             background-color: transparent;
         }
 
-        #portfolio ul {
+        /* #portfolio ul {
             list-style-type: disc !important;
             list-style-position: inside !important;
-        }
+        } */
 
-        #artikel ul {
+        /* #artikel ul {
             list-style-type: disc !important;
             list-style-position: inside !important;
         }
@@ -77,7 +84,7 @@
         #artikel ol {
             list-style-type: decimal !important;
             list-style-position: inside !important;
-        }
+        } */
     </style>
 </head>
 
@@ -92,7 +99,7 @@
     <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto bg-neutral-950 shadow-2xl">
             <a href="/" class="flex items-center pl-2.5 mb-5">
-                <img src="/img/creative.png" class="h-6 mr-3 sm:h-7" alt=" Logo" />
+                <img src="/img/bookmark2.png" class="h-6 mr-3 sm:h-7" alt=" Logo" />
                 <span class="self-center text-xl whitespace-nowrap text-white">CreativityCove</span>
             </a>
             <ul class="space-y-2 font-medium">
@@ -196,7 +203,7 @@
                 </button>
                 <div class="px-6 py-6 lg:px-8">
                     <a href="/" class="flex items-center mb-5">
-                        <img src="/img/creative2.png" class="h-6 mr-1 sm:h-7" alt="Flowbite Logo" />
+                        <img src="/img/bookmark.png" class="h-6 mr-1 sm:h-7" alt="Flowbite Logo" />
                         <span class="self-center text-2xl font-semibold whitespace-nowrap text-black tracking-tight">CreativityCove / Sign In</span>
                     </a>
                     <div class="flex items-center content-center mt-8">
@@ -233,6 +240,7 @@
 
     <!-- flowbite js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+
     <!-- select2 -->
     <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
     <!-- ck editor -->
