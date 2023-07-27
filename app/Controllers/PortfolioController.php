@@ -15,9 +15,14 @@ class PortfolioController extends BaseController
     }
     public function index()
     {
+        $uri = service('uri');
+        // pagination
+        $currentPage = $this->request->getVar('page_portofolios') ? $this->request->getVar('page_portofolios') : 1;
         $data = [
             'title' => 'Portfolio Management',
-            'portfolio' => $this->portfolioModel->orderBy('created_at', 'DESC')->findAll()
+            'portfolio' => $this->portfolioModel->orderBy('created_at DESC')->paginate(25, 'portofolios'),
+            'pager' => $this->portfolioModel->pager,
+            'currentPage' => $currentPage,
         ];
         return view('admin/portfolio/index', $data);
     }

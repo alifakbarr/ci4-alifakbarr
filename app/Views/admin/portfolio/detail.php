@@ -42,14 +42,19 @@
                     <?= date("d M Y", strtotime($portfolio['finish_at'])) ?>
                 </th>
             </tr>
-            <tr>
-                <th scope="col" class="px-6 py-4 text-xs text-black uppercase bg-white">
-                    Link
-                </th>
-                <th scope="row" class="px-6 py-4 font-medium text-white whitespace-wrap border-2 border-white">
-                    <a href="<?= $portfolio['link'] ?>" target="_blank" class="hover:underline">Klik me</a>
-                </th>
-            </tr>
+            <?php if ($portfolio['link'] !== '') : ?>
+                <tr>
+                    <th scope="col" class="px-6 py-4 text-xs text-black uppercase bg-white">
+                        Link
+                    </th>
+                    <th scope="row" class="px-6 py-4 font-medium text-white whitespace-wrap border-2 border-white">
+                        <a href="<?= $portfolio['link'] ?>" target="_blank" class="hover:underline">Klik me</a>
+                    </th>
+                </tr>
+            <?php endif ?>
+
+        </table>
+        <table class="w-full text-sm text-left text-white border-2 border-white">
             <tr>
                 <th scope="col" class="px-6 py-4 text-xs text-black uppercase bg-white">
                     Description
@@ -59,8 +64,8 @@
                 </th>
             </tr>
             <tr>
-                <th scope="row" class="px-6 py-4 font-medium text-white whitespace-wrap">
-                    <?= $portfolio['description'] ?>
+                <th class="px-6 py-4 font-normal">
+                    <article class="porse text-white"><?= $portfolio['description'] ?></article>
                 </th>
             </tr>
         </table>

@@ -31,7 +31,7 @@
             <tbody>
 
                 <!-- perhitungan pagination -->
-                <?php $no = 1 ?>
+                <?php $no = 1 + (2 * ($currentPage - 1)) ?>
                 <?php foreach ($portfolio as $p) : ?>
                     <tr class="border-b bg-black">
                         <th scope="row" class="px-6 py-4 font-medium text-white whitespace-wrap">
@@ -57,6 +57,9 @@
                 <?php endforeach ?>
             </tbody>
         </table>
+    </div>
+    <div class="mt-5 flex justify-center">
+        <?= $pager->links('portofolios', 'custom_pagination') ?>
     </div>
 </div>
 
