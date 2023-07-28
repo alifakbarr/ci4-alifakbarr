@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 <div class="pt-10 sm:pt-20 pb-10 px-8">
     <div class="">
-        <p class="text-4xl sm:text-5xl w-full tracking-tighter shadow-lg leading-tight font-bold text-white pb-20 text-center">Portfolio</p>
+        <p class="text-4xl sm:text-5xl w-full tracking-tighter shadow-lg leading-tight font-bold text-white pb-20 text-center">Portfolios</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <!-- Kolom 1 -->
             <div class="">
