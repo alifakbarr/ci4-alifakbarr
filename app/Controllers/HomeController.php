@@ -26,7 +26,14 @@ class HomeController extends BaseController
         helper('url');
         $articleModel = new ArticleModel();
 
-        $article = $articleModel->getAllArticle();
+        // search artikel
+        $keyword =  $this->request->getVar('keyword');
+        if ($keyword) {
+            $article = $this->articleModel->search($keyword);
+        } else {
+            $article = $articleModel->getAllArticle();
+        }
+
         $data = [
             'title' => 'Home',
             // 'article' => $this->articleModel->orderBy('created_at DESC')->paginate(10, 'articles'),
