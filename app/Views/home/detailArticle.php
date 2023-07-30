@@ -18,14 +18,14 @@
             <td class="pl-10">
                 <?php foreach ($article as $c) : ?>
                     <!-- <span class="bg-zinc-400 rounded-xl px-1 text-black text-xs mt-2"><?= $c['name'] ?></span> -->
-                    <span class=" text-black text-xs font-medium mr-2 px-1 py-0.5 rounded-xl bg-white"><?= $c['name'] ?></span>
+                    <span class=" text-black text-xs font-medium mr-2 px-1.5 py-0.5 rounded-xl bg-white"><?= $c['name'] ?></span>
                 <?php endforeach ?>
             </td>
         </tr>
     </table>
     <!-- <hr class="my-3 border-2 rounded-lg"> -->
-    <div class="rounded-lg font-light bg-gray-100 p-5 sm:p-20">
-        <div class="prose max-w-none pb-10 text-base">
+    <div class="rounded-lg font-light bg-gray-100 p-5 sm:p-16">
+        <div class="prose max-w-none pb-5 text-base">
             <?= $article[0]['content'] ?>
         </div>
 

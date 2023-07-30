@@ -31,7 +31,7 @@ class HomeController extends BaseController
         if ($keyword) {
             $article = $this->articleModel->search($keyword);
         } else {
-            $article = $articleModel->getAllArticle();
+            $article = $articleModel->getAllArticleWithCategories();
         }
 
         $data = [
@@ -48,11 +48,13 @@ class HomeController extends BaseController
         $currentPage = $this->request->getVar('page_articles') ? $this->request->getVar('page_articles') : 1;
         $articleModel = new ArticleModel();
 
-        $article = $articleModel->getAllArticle();
+        $article = $articleModel->getAllArticleWithCategoriesPaginate()->paginate(25, 'articles'); // Ganti jumlah data per halaman di sini (misalnya 10)
+        // Load pager library
+        $pager = \Config\Services::pager();
         $data = [
             'title' => 'List Article',
             'article' =>  $article,
-            'pager' => $this->articleModel->pager,
+            'pager' => $pager,
             'currentPage' => $currentPage
         ];
         return view('home/articles', $data);
