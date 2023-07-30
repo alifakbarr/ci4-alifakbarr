@@ -88,4 +88,34 @@ class ArticleModel extends Model
 
         return $query->getResultArray();
     }
+
+    public function search($keyword)
+    {
+        $query = $this->db->query("
+            SELECT articles.id, articles.title, articles.content, articles.created_at, articles.slug,
+                   (
+                       SELECT GROUP_CONCAT(categories.name SEPARATOR ', ') 
+                       FROM article_categories 
+                       JOIN categories ON categories.id = article_categories.category_id
+                       WHERE article_categories.article_id = articles.id
+                   ) as category_names,
+                   (
+                       SELECT GROUP_CONCAT(categories.color SEPARATOR ', ') 
+                       FROM article_categories 
+                       JOIN categories ON categories.id = article_categories.category_id
+                       WHERE article_categories.article_id = articles.id
+                   ) as category_colors
+            FROM articles
+            WHERE articles.title LIKE '%{$keyword}%'
+            ORDER BY articles.created_at DESC
+        ");
+        return $query->getResultArray();
+
+        // $builder = $this->table('articles');
+        // $builder->like('title', $keyword);
+        // // dd($articles);
+        // return $builder;
+        // return $query;
+        // return $this->table('articles')->like('title', $keyword);
+    }
 }
