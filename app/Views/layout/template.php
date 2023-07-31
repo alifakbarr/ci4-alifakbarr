@@ -183,7 +183,7 @@
             </ul>
         </div>
     </aside>
-    <div class="p-4 sm:ml-64">
+    <div class="p-2 sm:p-4 sm:ml-64">
         <?= $this->renderSection('content') ?>
         <div class="p-4 border-2 bg-white border border-white rounded-lg mt-5">
             <h1 class="text-left font-base text-sm">&copy 2023 | Alif Akbar Irdhobilla</h1>
