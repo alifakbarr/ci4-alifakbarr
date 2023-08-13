@@ -1,4 +1,4 @@
-<div class="my-6">
+<div class="my-9 px-12">
     <label for="default-search" class="mb-2 text-sm font-medium text-black sr-only">Search</label>
     <div class="relative">
         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
