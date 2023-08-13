@@ -6,7 +6,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <!-- Kolom 1 -->
             <div class="">
-                <p class="text-4xl sm:text-5xl w-full tracking-tight shadow-lg leading-tight font-bold text-white py-3">Hi, I'm Alif Akbar Irdhobilla, a backend developer from Indonesia. Check out my portfolio to see my work!</p>
+                <p class="text-4xl sm:text-5xl w-full tracking-tight shadow-lg leading-tight font-bold text-white py-3">Hi, I'm Alif Akbar Irdhobilla, lorema backend developer from Indonesia. Check out my portfolio to see my work!</p>
                 <p class="text-base sm:text-base w-full tracking-tighter shadow-lg leading-tight font-normal text-white pt-3">"There are no limits to what a person can achieve when they pursue their dreams!"</p>
                 <p class="text-base sm:text-base w-full tracking-tighter shadow-lg leading-tight font-normal text-white pt-2 pb-10">Monkey D. Luffy (One Piece)</p>
             </div>
