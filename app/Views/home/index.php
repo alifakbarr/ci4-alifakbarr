@@ -4,7 +4,7 @@
 <?= $this->include('layout/home/searchHome') ?>
 
 
-<div class="mt-9 mb-28 px-12 rounded-lg">
+<div class="mt-9 mb-28 px-8 sm:px-12 rounded-lg">
     <div class="flex justify-between items-center mb-5 pb-3 border-b border-zinc-700">
         <div class="flex items-center ">
             <img src="/img/article2.png" class="h-8 mr-1 sm:h-8" alt="instagram" />
@@ -21,8 +21,8 @@
         <?php if ($article && is_array($article)) : ?>
             <?php foreach ($article as $a) : ?>
                 <div class="">
-                    <a href="/articles/<?= $a['slug'] ?>" class="card flex hover:scale-105 transition-transform duration-300 p-4 mb-7">
-                        <h1 class="text-3xl font-black sm:text-5xl text-zinc-200 mr-7 hover:text-yellow-500 transition-colors duration-300"><?= sprintf('%02d', $no++) ?></h1>
+                    <a href="/articles/<?= $a['slug'] ?>" class="flex p-4 mb-7">
+                        <h1 class="text-4xl font-black sm:text-5xl text-zinc-300 mr-7"><?= sprintf('%02d', $no++) ?></h1>
                         <div class="flex content-center items-start sm:items-center hover:underline hover:decoration-white"></div>
                         <div class="">
                             <h2 class="text-black font-bold tracking-tight leading-tight"><?= $a['title'] ?></h2>

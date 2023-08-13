@@ -207,7 +207,7 @@
                                 <?= session('errors.password') ?>
                             </div>
                         </div>
-                        <button type="submit" class="w-full text-white bg-black hover:bg-black focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Login to your account</button>
+                        <button type="submit" class="w-full text-black bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-gray-300 font-bold rounded-lg text-base px-5 py-2.5 text-center">Login</button>
                         <!-- <div class="text-sm font-medium text-zinc-500">
                             Not registered? <a href="<?= url_to('register') ?>" class="text-black hover:underline">Create account</a>
                         </div> -->
