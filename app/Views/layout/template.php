@@ -97,7 +97,7 @@
     </button>
 
 
-    <nav class="bg-white border-gray-200 fixed w-full z-20 top-0 left-0">
+    <nav class="bg-white border-gray-200 fixed w-full z-20 top-0 left-0 border-2 border-b-black">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="/" class="flex items-center">
                 <img src="/img/bookmark.png" class="h-8 mr-3" alt="CreativityCove" />

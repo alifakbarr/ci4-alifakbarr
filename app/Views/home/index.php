@@ -15,7 +15,7 @@
             <!-- <div class="border-b border-white"></div> -->
         </div>
     </div>
-    <div class="grid grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-4">
         <?php $no = 1 ?>
         <!-- <div class="pt-3 mb-3 rounded"> -->
         <?php if ($article && is_array($article)) : ?>
