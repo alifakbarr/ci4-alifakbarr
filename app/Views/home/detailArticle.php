@@ -1,6 +1,6 @@
 <?= $this->extend('/layout/template') ?>
 <?= $this->section('content') ?>
-<div class="rounded-lg pt-8 pb-5 py-20 sm:py-24 px-4 sm:px-32">
+<div class="rounded-lg pt-8 pb-5 py-20 sm:py-24 px-4 sm:px-44">
     <!-- <hr class="my-3 border-2 rounded-lg"> -->
     <div class="sm:px-7 py-7 ">
         <div class="font-light p-5 sm:p-16 -mt-24">

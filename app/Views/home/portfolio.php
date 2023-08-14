@@ -6,8 +6,8 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <!-- Kolom 1 -->
             <div class="sm:pt-28">
-                <p class="text-4xl sm:text-5xl w-full tracking-tight leading-tight font-bold text-black py-3">Hi, I'm Alif Akbar Irdhobilla, lorema backend developer from Indonesia. Check out my portfolio to see my work!</p>
-                <p class="text-base sm:text-base w-full tracking-tighter leading-tight font-normal text-black pt-3">"There are no limits to what a person can achieve when they pursue their dreams!"</p>
+                <p class="text-4xl sm:text-5xl w-full tracking-tight leading-tight font-bold text-black py-3">Hi, I'm <span class="bg-yellow-500">Alif Akbar Irdhobilla</span>, backend developer from Indonesia. Check out my portfolio to see my work!</p>
+                <p class="text-base sm:text-base w-full tracking-tighter leading-tight font-normal text-black bg-yellow-500 mt-3">"There are no limits to what a person can achieve when they pursue their dreams!"</p>
                 <p class="text-base sm:text-base w-full tracking-tighter leading-tight font-normal text-black pt-2 pb-10">Monkey D. Luffy (One Piece)</p>
             </div>
             <!-- Kolom 2 -->
@@ -19,12 +19,12 @@
         </div>
         <!-- <hr class="border border-white rounded-lg mt-2 mb-2 w-full"> -->
         <p class="text-base sm:text-base w-full tracking-tighter leading-relaxed font-normal text-gray-800 pt-9 sm:pt-10">
-            I am a graduate of Bachelor's degree in Computer Engineering majoring in Informatics Engineering from Muhammadiyah University of Sidoarjo. My expertise lies in web development using Laravel, Bootstrap, Tailwind, MySQL, and PostgreSQL. Additionally, I have a strong understanding of database analysis and website security. Moreover, I have a keen interest and skills in creating designs for Instagram content. I take pleasure in crafting appealing and creative designs that enhance visual content and attract users.
+            <span class="bg-yellow-500">I am a graduate of Bachelor's degree in Computer Engineering</span> majoring in Informatics Engineering from Muhammadiyah University of Sidoarjo. My expertise lies in web development using Laravel, Bootstrap, Tailwind, MySQL, and PostgreSQL. Additionally, I have a strong understanding of database analysis and website security. Moreover, I have a keen interest and skills in creating designs for Instagram content. I take pleasure in crafting appealing and creative designs that enhance visual content and attract users.
         </p>
-        <p class="text-base sm:text-base w-full tracking-tighter leading-relaxed font-normal text-gray-800 pt-3">
+        <p class="text-base sm:text-base w-full tracking-tighter leading-relaxed font-normal text-gray-800 bg-yellow-500 mt-3">
             By combining my technical knowledge with design skills, I strive to deliver a complete and satisfying user experience.
         </p>
-        <div class="border border-neutral-700 rounded-lg mt-8 pt-3 pb-5 p-3">
+        <div class="border border-yellow-500 rounded-lg mt-8 pt-3 pb-5 p-3">
             <p class="text-base sm:text-base w-full tracking-tight leading-tight font-bold text-gray-800 ">
                 My Social Links
             </p>
@@ -66,7 +66,7 @@
         <p class="text-3xl sm:text-4xl w-full tracking-tight leading-tight font-bold text-gray-800 mt-10">
             My Journey
         </p>
-        <p class="text-sm sm:text-base w-full tracking-tighter leading-tight font-normal text-black pt-3">"If you don't risk your life, you can't create a future. Right?"</p>
+        <p class="text-sm sm:text-base tracking-tighter leading-tight font-normal text-black mt-3">"If you don't risk your life, you can't create a future. Right?"</p>
         <p class="text-sm sm:text-base w-full tracking-tighter leading-tight font-normal text-black pb-7">Brook (One Piece)</p>
         <div id="portfolio" class="px-3 mb-28">
             <ol class="relative border-l border-gray-700">

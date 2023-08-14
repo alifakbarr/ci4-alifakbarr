@@ -112,15 +112,7 @@
             <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x md:mt-0 md:border-0 md:bg-white">
                     <?php $currentURL = base_url(uri_string()); ?>
-                    <?php if (in_groups('admin') || in_groups('user')) : ?>
-                        <li>
-                            <a href="/profile" class="block py-2 pl-3 pr-4 rounded <?= $currentURL == base_url('/profile') ? 'text-blue-700' : 'text-gray-900 hover:text-blue-700'  ?> ">My Profile</a>
-                        </li>
-                    <?php endif; ?>
                     <?php if (in_groups('admin')) : ?>
-                        <li>
-                            <a href="/admin/userManagement" class="block py-2 pl-3 pr-4 rounded <?= $currentURL == base_url('/admin/userManagement') ? 'text-blue-700' : 'text-gray-900 hover:text-blue-700'  ?> ">User Management</a>
-                        </li>
                         <li>
                             <a href="/admin/article" class="block py-2 pl-3 pr-4 rounded <?= $currentURL == base_url('/admin/article') ? 'text-blue-700' : 'text-gray-900 hover:text-blue-700'  ?> ">Article Management</a>
                         </li>

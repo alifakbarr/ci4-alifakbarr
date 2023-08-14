@@ -1,7 +1,7 @@
 <?= $this->extend('/layout/template') ?>
 <?= $this->section('content') ?>
-<div class="p-4 border-2 border-white border rounded-lg">
-    <div class="w-full p-4 mb-1 text-center  border border-gray-200 rounded-lg shadow sm:p-8 bg-yellow-400">
+<div class="border-2 border-t-black border-b-black">
+    <div class="mt-8 sm:mt-16 py-16 sm:py-24 px-8 sm:px-14 bg-yellow-500 border-t-2 border-b-2 border-t-black border-b-black">
         <h5 class="mb-2 text-3xl font-bold text-black "><?= $article[0]['title'] ?></h5>
         <p class="mb-2 text-lg font-bold text-black ">Share : <?= ucwords($article[0]['share']) ?> | Status : <?= ucwords($article[0]['status']) ?></p>
         <p class="mb-5 italic text-base text-black sm:text-base ">
@@ -10,10 +10,12 @@
             <?php endforeach ?>
         </p>
     </div>
+</div>
+<div class="mt-9 mb-28 px-8 sm:px-40 rounded-lg">
     <p class="text-white text-sm italic mb-2 text-right">Created At : <?= date("d M Y", strtotime($article[0]['created_at'])) ?> // Updated At : <?= date("d M Y", strtotime($article[0]['updated_at'])) ?></p>
-    <a href="/admin/article/edit/<?= $article[0]['slug'] ?>" type="button" class="text-black bg-yellow-300 font-medium rounded-2xl text-sm px-6 py-1 text-center mr-2 mb-2">Edit</a>
-    <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" type="button" class="text-black bg-rose-600 font-medium rounded-2xl text-sm px-6 py-1 text-center mr-2 mb-2">Delete</button>
-    <div class="text-white text-justify tracking-tighter leading-relaxed mt-1 ">
+    <a href="/admin/article/edit/<?= $article[0]['slug'] ?>" type="button" class="text-black bg-yellow-500 font-medium rounded-lg border border-black text-sm px-6 py-1 text-center mr-2 mb-2">Edit</a>
+    <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" type="button" class="text-black bg-red-600 font-medium rounded-lg border border-black text-sm px-6 py-1 text-center mr-2 mb-2">Delete</button>
+    <div class="prose max-w-none text-sm sm:text-base pb-5 mt-12 sm:mt-16">
         <?= $article[0]['content'] ?>
     </div>
 
@@ -44,5 +46,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 <?= $this->endSection() ?>

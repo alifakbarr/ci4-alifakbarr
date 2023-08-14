@@ -6,7 +6,7 @@
         <div class="flex justify-center items-center pb-6">
             <img src="img/bookmark.png" alt="Gambar Tengah" class="h-20">
         </div>
-        <p class="text-4xl sm:text-5xl w-full tracking-tight leading-tight font-bold text-black py-3">CreativityCove</p>
+        <p class="text-4xl sm:text-5xl w-full tracking-tight leading-tight font-bold text-black my-3"><span class="bg-yellow-500">CreativityCove<span></p>
         <p class="text-base sm:text-base w-full tracking-tighter leading-tight font-normal text-black pb-3">Enjoy exploring, creating, and imagining, CreativityCove, where limitless creative energy is everything.</p>
         <p class="text-xs sm:text-xs w-full tracking-tighter leading-tight font-normal text-black pb-6">Created At Jun 12, 2023 | Made By alifakbarr</p>
         <!-- <hr class="border border-white rounded-lg mt-2 mb-2 w-full"> -->
