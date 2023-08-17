@@ -9,7 +9,7 @@
             <?php foreach ($article as $c) : ?>
                 <span class=" text-white text-sm font-medium mr-2 px-2 py-1 rounded-xl  bg-green-600"><?= $c['name'] ?></span>
             <?php endforeach ?>
-            <div class="prose max-w-none text-sm sm:text-base pb-5 mt-12 sm:mt-16">
+            <div class="prose max-w-none text-sm sm:text-base pb-5 mt-12 sm:mt-16 prose-xl tracking-wide">
                 <?= $article[0]['content'] ?>
             </div>
 

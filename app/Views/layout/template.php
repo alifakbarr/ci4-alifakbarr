@@ -139,9 +139,6 @@
                         <a href="/" class="block py-2 pl-3 pr-4 rounded <?= $currentURL == base_url() || $currentURL == base_url('/') ? 'text-blue-700' : 'text-gray-900 hover:text-blue-700'  ?> ">Home</a>
                     </li>
                     <li>
-                        <a href="/articles" class="block py-2 pl-3 pr-4 rounded <?= $currentURL == base_url('/articles') ? 'text-blue-700' : 'text-gray-900 hover:text-blue-700'  ?> ">Articles</a>
-                    </li>
-                    <li>
                         <a href="/portfolio" class="block py-2 pl-3 pr-4 rounded <?= $currentURL == base_url('/portfolio') ? 'text-blue-700' : 'text-gray-900 hover:text-blue-700'  ?> ">Portfolio</a>
                     </li>
                     <li>
@@ -214,6 +211,7 @@
 
     <!-- select2 -->
     <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
+
     <!-- ck editor -->
     <script>
         ClassicEditor
@@ -231,7 +229,9 @@
         //     document.querySelector("input[name='content']").value = quill.root.innerHTML;
         // });
     </script>
+
 </body>
+
 <script>
     new MultiSelectTag('mySelect') // id
 </script>

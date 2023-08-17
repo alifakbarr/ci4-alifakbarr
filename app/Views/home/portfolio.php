@@ -7,7 +7,7 @@
             <!-- Kolom 1 -->
             <div class="sm:pt-28">
                 <p class="text-4xl sm:text-5xl w-full tracking-tight leading-tight font-bold text-black py-3">Hi, I'm <span class="bg-yellow-500">Alif Akbar Irdhobilla</span>, backend developer from Indonesia. Check out my portfolio to see my work!</p>
-                <p class="text-base sm:text-base w-full tracking-tighter leading-tight font-normal text-black bg-yellow-500 mt-3">"There are no limits to what a person can achieve when they pursue their dreams!"</p>
+                <p class="text-base sm:text-base w-full tracking-tighter leading-tight font-normal text-black mt-3"><span class="bg-yellow-500 ">"There are no limits to what a person can achieve when they pursue their dreams!"</span></p>
                 <p class="text-base sm:text-base w-full tracking-tighter leading-tight font-normal text-black pt-2 pb-10">Monkey D. Luffy (One Piece)</p>
             </div>
             <!-- Kolom 2 -->
@@ -21,8 +21,8 @@
         <p class="text-base sm:text-base w-full tracking-tighter leading-relaxed font-normal text-gray-800 pt-9 sm:pt-10">
             <span class="bg-yellow-500">I am a graduate of Bachelor's degree in Computer Engineering</span> majoring in Informatics Engineering from Muhammadiyah University of Sidoarjo. My expertise lies in web development using Laravel, Bootstrap, Tailwind, MySQL, and PostgreSQL. Additionally, I have a strong understanding of database analysis and website security. Moreover, I have a keen interest and skills in creating designs for Instagram content. I take pleasure in crafting appealing and creative designs that enhance visual content and attract users.
         </p>
-        <p class="text-base sm:text-base w-full tracking-tighter leading-relaxed font-normal text-gray-800 bg-yellow-500 mt-3">
-            By combining my technical knowledge with design skills, I strive to deliver a complete and satisfying user experience.
+        <p class="text-base sm:text-base w-full tracking-tighter leading-relaxed font-normal text-gray-800 mt-3">
+            <span class="bg-yellow-400">By combining my technical knowledge with design skills, I strive to deliver a complete and satisfying user experience.</span>
         </p>
         <div class="border border-yellow-500 rounded-lg mt-8 pt-3 pb-5 p-3">
             <p class="text-base sm:text-base w-full tracking-tight leading-tight font-bold text-gray-800 ">
@@ -66,13 +66,13 @@
         <p class="text-3xl sm:text-4xl w-full tracking-tight leading-tight font-bold text-gray-800 mt-10">
             My Journey
         </p>
-        <p class="text-sm sm:text-base tracking-tighter leading-tight font-normal text-black mt-3">"If you don't risk your life, you can't create a future. Right?"</p>
+        <p class="text-sm sm:text-base tracking-tighter leading-tight font-normal text-black mt-3"><span class="bg-yellow-500">"If you don't risk your life, you can't create a future. Right?"</span></p>
         <p class="text-sm sm:text-base w-full tracking-tighter leading-tight font-normal text-black pb-7">Brook (One Piece)</p>
         <div id="portfolio" class="px-3 mb-28">
             <ol class="relative border-l border-gray-700">
                 <?php foreach ($portfolio as $p) : ?>
                     <li class="mb-10 ml-6">
-                        <span class="absolute flex items-center justify-center w-6 h-6 bg-neutral-900 rounded-full -left-3 ring-8 ring-neutral-200">
+                        <span class="absolute flex items-center justify-center w-6 h-6 bg-neutral-900 rounded-full -left-3 ring-8 ring-yellow-500">
                             <svg class="w-2.5 h-2.5 text-neutral-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                             </svg>

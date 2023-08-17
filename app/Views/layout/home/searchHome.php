@@ -1,4 +1,4 @@
-<div class="my-9 px-8 sm:px-12">
+<div class="mt-9 px-8 sm:px-12">
     <label for="default-search" class="mb-2 text-sm font-medium text-black sr-only">Search</label>
     <div class="relative">
         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -7,7 +7,7 @@
             </svg>
         </div>
         <form action="" method="get">
-            <input type="search" name="keyword" id="default-search" class="block w-full p-4  pl-10 text-sm text-black rounded-lg bg-white" placeholder="Search articles" required>
+            <input type="text" name="keyword" id="search" class="block w-full p-4  pl-10 text-sm text-black rounded-lg bg-white" placeholder="Search articles...">
             <button type="submit" name="submit" class="text-white absolute right-2.5 bottom-2.5 bg-black font-medium rounded-lg text-sm px-4 py-2">Search</button>
         </form>
     </div>

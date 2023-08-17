@@ -9,6 +9,7 @@ use App\Library\Globals;
 use App\Models\ArticleCategoryModel;
 use App\Models\CategoryModel;
 use App\Models\PortfolioModel;
+use CodeIgniter\HTTP\Request;
 
 class HomeController extends BaseController
 {
@@ -31,14 +32,18 @@ class HomeController extends BaseController
         if ($keyword) {
             $article = $this->articleModel->search($keyword);
         } else {
-            $article = $articleModel->getAllArticleWithCategories();
-        }
+            $article = $articleModel->getAllArticleWithCategoriesPaginate()->paginate(1, 'articles');
 
+            // $article = $articleModel->getAllArticleWithCategories();
+        }
+        $pager = \Config\Services::pager();
         $data = [
             'title' => 'Home',
             // 'article' => $this->articleModel->orderBy('created_at DESC')->paginate(10, 'articles'),
+            // 'article' => $article,
             'article' => $article,
-            'pager' => $this->articleModel->pager,
+            'pager' => $pager,
+            // 'pager' => $this->articleModel->pager,
         ];
         return view('home/index', $data);
     }
