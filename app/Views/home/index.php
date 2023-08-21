@@ -4,7 +4,7 @@
 <?= $this->include('layout/home/searchHome') ?>
 
 
-<div class="mt-3 mb-28 px-8 sm:px-12 rounded-lg">
+<div class="mt-3 mb-28 px-8 sm:px-56 rounded-lg">
     <!-- <div class="flex justify-between items-center mb-5 pb-3 border-b border-zinc-700"> -->
     <!-- <div class="flex items-center ">
             <img src="/img/article2.png" class="h-8 mr-1 sm:h-8" alt="instagram" />

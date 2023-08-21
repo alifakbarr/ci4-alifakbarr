@@ -32,7 +32,7 @@ class HomeController extends BaseController
         if ($keyword) {
             $article = $this->articleModel->search($keyword);
         } else {
-            $article = $articleModel->getAllArticleWithCategoriesPaginate()->paginate(1, 'articles');
+            $article = $articleModel->getAllArticleWithCategoriesPaginate()->paginate(25, 'articles');
 
             // $article = $articleModel->getAllArticleWithCategories();
         }

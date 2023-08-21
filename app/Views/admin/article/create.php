@@ -1,13 +1,13 @@
 <?= $this->extend('/layout/template') ?>
 <?= $this->section('content') ?>
-<div class="w-full p-4 mb-5 text-center bg-yellow-400 border border-gray-200 rounded-lg shadow sm:p-8">
+<div class="mt-8 sm:mt-16 py-16 sm:py-24 px-8 sm:px-14 bg-yellow-500 border-t-2 border-b-2 border-t-black border-b-black">
     <h5 class="mb-2 text-3xl font-bold text-black ">Create Article</h5>
     <p class="mb-5 italic text-base text-black sm:text-base ">Try type something</p>
 </div>
-<div class="p-4 border-2 border-white border rounded-lg">
+<div class="mt-5 mb-28 px-8 sm:px-40 rounded-lg">
     <div class="relative overflow-x-auto">
         <?php $validation = \Config\Services::validation(); ?>
-        <form action="/admin/article/save" method="post">
+        <form action="/admin/article/save" method="post" enctype="multipart/form-data">
             <?= csrf_field() ?>
             <div>
                 <label for="title" class="block mb-2 text-normal font-medium text-white">Title</label>

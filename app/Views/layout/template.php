@@ -17,14 +17,15 @@
 
                 }
             },
-            plugins: [
-                require('@tailwindcss/typography'),
-                // ...
-            ],
+            // plugins: [
+            //     require('@tailwindcss/typography'),
+            //     // ...
+            // ],
         }
     </script>
     <!-- ckeditor -->
-    <script src="https://cdn.ckeditor.com/ckeditor5/38.1.0/classic/ckeditor.js"></script>
+    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/38.1.0/classic/ckeditor.js"></script> -->
+    <script src="/ckeditor/ckeditor.js"></script>
     <!-- <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> -->
     <!-- flowbite css -->
@@ -114,13 +115,13 @@
                     <?php $currentURL = base_url(uri_string()); ?>
                     <?php if (in_groups('admin')) : ?>
                         <li>
-                            <a href="/admin/article" class="block py-2 pl-3 pr-4 rounded <?= $currentURL == base_url('/admin/article') ? 'text-blue-700' : 'text-gray-900 hover:text-blue-700'  ?> ">Article Management</a>
+                            <a href="/admin/article" class="block py-2 pl-3 pr-4 rounded <?= $currentURL == base_url('/admin/article') ? 'text-blue-700' : 'text-gray-900 hover:text-blue-700'  ?> ">Article M</a>
                         </li>
                         <li>
-                            <a href="/admin/category" class="block py-2 pl-3 pr-4 rounded <?= $currentURL == base_url('/admin/category') ? 'text-blue-700' : 'text-gray-900 hover:text-blue-700'  ?> ">Category Management</a>
+                            <a href="/admin/category" class="block py-2 pl-3 pr-4 rounded <?= $currentURL == base_url('/admin/category') ? 'text-blue-700' : 'text-gray-900 hover:text-blue-700'  ?> ">Category M</a>
                         </li>
                         <li>
-                            <a href="/admin/portfolio" class="block py-2 pl-3 pr-4 rounded <?= $currentURL == base_url('/admin/portfolio') ? 'text-blue-700' : 'text-gray-900 hover:text-blue-700'  ?> ">Portfolio Management</a>
+                            <a href="/admin/portfolio" class="block py-2 pl-3 pr-4 rounded <?= $currentURL == base_url('/admin/portfolio') ? 'text-blue-700' : 'text-gray-900 hover:text-blue-700'  ?> ">Portfolio M</a>
                         </li>
                     <?php endif; ?>
                     <?php if (logged_in() == true) : ?>
@@ -214,14 +215,15 @@
 
     <!-- ck editor -->
     <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .then(editor => {
-                editor.resize('100%', '900px', true);
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        CKEDITOR.replace('editor');
+        // ClassicEditor
+        //     .create(document.querySelector('#editor'))
+        //     .then(editor => {
+        //         editor.resize('100%', '900px', true);
+        //     })
+        //     .catch(error => {
+        //         console.error(error);
+        //     });
         // var quill = new Quill('#editor', {
         //     theme: 'snow'
         // });
